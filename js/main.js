@@ -319,13 +319,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return div.innerHTML;
     }
 
-    // ===== 首页信息TOP（仿njzwtqgs.cn inC结构） =====
+    // ===== 首页信息TOP（完全照搬njzwtqgs.cn） =====
     const homeInfoList = document.getElementById('homeInfoList');
     const homeLatestList = document.getElementById('homeLatestList');
     
     if (homeInfoList) {
         const list = getInfoList();
-        const approved = list.filter(item => item.status === 'approved').slice(0, 8);
+        const approved = list.filter(item => item.status === 'approved').slice(0, 9);
         if (approved.length === 0) {
             homeInfoList.innerHTML = '<li style="text-align:center;padding:60px 20px;list-style:none;width:100%;color:#999;">暂无信息，<a href="publish.html" style="color:#e8491d;">立即发布</a></li>';
         } else {
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ===== 最新发布NEWS（仿njzwtqgs.cn inD结构） =====
+    // ===== 最新发布NEWS（完全照搬njzwtqgs.cn） =====
     if (homeLatestList) {
         const list = getInfoList();
         const approved = list.filter(item => item.status === 'approved').slice(0, 6);
