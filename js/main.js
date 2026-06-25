@@ -245,14 +245,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li>
                     <a href="info-detail.html?id=${item.id}">
                         <div class="inC_c_T">
-                            <p style="font-size:48px;text-align:center;padding:40px 0;background:#f0f4f8;">📄</p>
-                            <div><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M15 12h-5v-2h5v2zm-7-4h9v-2h-9v2zm0 6h9v-2h-9v2zm10-10v16h-14v-16h14zm2-2h-18v20h18v-20z'/%3E%3C/svg%3E" alt="view"></div>
+                            <p style="font-size:48px;text-align:center;padding:40px 0;background:#f0f4f8;margin:0;">📄</p>
+                            <div></div>
                         </div>
                         <div class="inC_c_e">
                             <h3>${escapeHtml(item.title)}</h3>
-                            <p>${item.dateStr}　👤 ${escapeHtml(item.contact)}　📞 ${escapeHtml(item.phone)}<span class="bg"></span></p>
+                            <p>${item.dateStr}　👤 ${escapeHtml(item.contact)}　📞 ${escapeHtml(item.phone)}</p>
                         </div>
-                        <span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span>
+                        <div class="l1"></div><div class="l2"></div><div class="l3"></div><div class="l4"></div>
                     </a>
                 </li>
             `;
@@ -319,83 +319,63 @@ document.addEventListener('DOMContentLoaded', function() {
         return div.innerHTML;
     }
 
-    // ===== 首页信息列表渲染（njzwtqgs.cn风格） =====
+    // ===== 首页信息TOP（仿njzwtqgs.cn inC结构） =====
     const homeInfoList = document.getElementById('homeInfoList');
     const homeLatestList = document.getElementById('homeLatestList');
     
     if (homeInfoList) {
-        renderHomeInfoBlocks();
-    }
-    if (homeLatestList) {
-        renderHomeLatestList();
-    }
-
-    function renderHomeInfoBlocks() {
         const list = getInfoList();
-        const approved = list.filter(item => item.status === 'approved').slice(0, 6);
-
+        const approved = list.filter(item => item.status === 'approved').slice(0, 8);
         if (approved.length === 0) {
-            homeInfoList.innerHTML = '<li style="text-align:center;padding:60px 20px;list-style:none;width:100%;color:#999;"><p>暂无信息，<a href="publish.html" style="color:#e8491d;">立即发布</a></p></li>';
-            return;
-        }
-
-        let html = '';
-        approved.forEach(item => {
-            const desc = item.content.replace(/<[^>]*>/g, '').substring(0, 60);
-            html += `
-                <li>
-                    <a href="info-detail.html?id=${item.id}">
-                        <div class="inD_c_t">
-                            <div class="up-graybox">
-                                <p class="stit">查看详情</p>
-                                <span class="line linet"></span>
-                                <span class="line lineb"></span>
-                            </div>
-                            <p style="font-size:48px;text-align:center;padding:30px 0;background:#f0f4f8;">📄</p>
-                        </div>
-                        <div class="inD_c_e">
-                            <dt>${escapeHtml(item.title)}</dt>
-                            <dd>
-                                <p>${escapeHtml(desc)}${item.content.length > 60 ? '...' : ''}</p>
-                                <span>${item.dateStr}　👤 ${escapeHtml(item.contact)}　📞 ${escapeHtml(item.phone)}<i></i></span>
-                            </dd>
-                        </div>
-                    </a>
-                </li>
-            `;
-        });
-        homeInfoList.innerHTML = html;
-    }
-
-    function renderHomeLatestList() {
-        const list = getInfoList();
-        const approved = list.filter(item => item.status === 'approved').slice(0, 6);
-
-        if (approved.length === 0) {
-            homeLatestList.innerHTML = '<li style="text-align:center;padding:40px;list-style:none;width:100%;color:#999;">暂无最新信息</li>';
-            return;
-        }
-
-        let html = '';
-        approved.forEach(item => {
-            const desc = item.content.replace(/<[^>]*>/g, '').substring(0, 80);
-            html += `
+            homeInfoList.innerHTML = '<li style="text-align:center;padding:60px 20px;list-style:none;width:100%;color:#999;">暂无信息，<a href="publish.html" style="color:#e8491d;">立即发布</a></li>';
+        } else {
+            let html = '';
+            approved.forEach(item => {
+                const desc = item.content.replace(/<[^>]*>/g, '').substring(0, 80);
+                html += `
                 <li>
                     <a href="info-detail.html?id=${item.id}">
                         <div class="inC_c_T">
-                            <p style="font-size:48px;text-align:center;padding:40px 0;background:#f0f4f8;">📄</p>
-                            <div><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M15 12h-5v-2h5v2zm-7-4h9v-2h-9v2zm0 6h9v-2h-9v2zm10-10v16h-14v-16h14zm2-2h-18v20h18v-20z'/%3E%3C/svg%3E" alt="view"></div>
+                            <p style="font-size:48px;text-align:center;padding:40px 0;background:#f0f4f8;margin:0;">📄</p>
+                            <div></div>
                         </div>
                         <div class="inC_c_e">
                             <h3>${escapeHtml(item.title)}</h3>
-                            <p>${item.dateStr}　👤 ${escapeHtml(item.contact)}<span class="bg"></span></p>
+                            <p>${item.dateStr}　👤 ${escapeHtml(item.contact)}</p>
                         </div>
-                        <span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span>
+                        <div class="l1"></div><div class="l2"></div><div class="l3"></div><div class="l4"></div>
                     </a>
-                </li>
-            `;
-        });
-        homeLatestList.innerHTML = html;
+                </li>`;
+            });
+            homeInfoList.innerHTML = html;
+        }
+    }
+
+    // ===== 最新发布NEWS（仿njzwtqgs.cn inD结构） =====
+    if (homeLatestList) {
+        const list = getInfoList();
+        const approved = list.filter(item => item.status === 'approved').slice(0, 6);
+        if (approved.length === 0) {
+            homeLatestList.innerHTML = '<li style="text-align:center;padding:40px;list-style:none;width:100%;color:#999;">暂无最新信息</li>';
+        } else {
+            let html = '';
+            approved.forEach(item => {
+                const desc = item.content.replace(/<[^>]*>/g, '').substring(0, 100);
+                html += `
+                <li>
+                    <a href="info-detail.html?id=${item.id}">
+                        <dl class="inD_c_e">
+                            <dt>${escapeHtml(item.title)}</dt>
+                            <dd>
+                                <p>${escapeHtml(desc)}${item.content.length > 100 ? '...' : ''}</p>
+                                <span>${item.dateStr}　👤 ${escapeHtml(item.contact)}　📞 ${escapeHtml(item.phone)}<i></i></span>
+                            </dd>
+                        </dl>
+                    </a>
+                </li>`;
+            });
+            homeLatestList.innerHTML = html;
+        }
     }
 
     // ===== 原有功能 =====
