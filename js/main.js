@@ -240,21 +240,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let html = '';
         filtered.forEach(item => {
-            const desc = item.content.replace(/<[^>]*>/g, '').substring(0, 100);
+            const desc = item.content.replace(/<[^>]*>/g, '').substring(0, 80);
             html += `
-                <a href="info-detail.html?id=${item.id}" class="info-item">
-                    <div class="info-item-top">
-                        <h3>${escapeHtml(item.title)}</h3>
-                        <span class="info-tag ${item.category}">${item.categoryName}</span>
-                    </div>
-                    <div class="info-item-desc">${escapeHtml(desc)}${item.content.length > 100 ? '...' : ''}</div>
-                    <div class="info-item-meta">
-                        <span>📅 ${item.dateStr}</span>
-                        <span>👤 ${escapeHtml(item.contact)}</span>
-                        <span>📞 ${escapeHtml(item.phone)}</span>
-                        ${item.area !== '--' ? `<span>📍 ${escapeHtml(item.area)}</span>` : ''}
-                    </div>
-                </a>
+                <li>
+                    <a href="info-detail.html?id=${item.id}">
+                        <div class="inC_c_T">
+                            <p style="font-size:48px;text-align:center;padding:40px 0;background:#f0f4f8;">📄</p>
+                            <div><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M15 12h-5v-2h5v2zm-7-4h9v-2h-9v2zm0 6h9v-2h-9v2zm10-10v16h-14v-16h14zm2-2h-18v20h18v-20z'/%3E%3C/svg%3E" alt="view"></div>
+                        </div>
+                        <div class="inC_c_e">
+                            <h3>${escapeHtml(item.title)}</h3>
+                            <p>${item.dateStr}　👤 ${escapeHtml(item.contact)}　📞 ${escapeHtml(item.phone)}<span class="bg"></span></p>
+                        </div>
+                        <span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span>
+                    </a>
+                </li>
             `;
         });
         infoListEl.innerHTML = html;
@@ -319,18 +319,23 @@ document.addEventListener('DOMContentLoaded', function() {
         return div.innerHTML;
     }
 
-    // ===== 首页信息列表渲染 =====
+    // ===== 首页信息列表渲染（njzwtqgs.cn风格） =====
     const homeInfoList = document.getElementById('homeInfoList');
+    const homeLatestList = document.getElementById('homeLatestList');
+    
     if (homeInfoList) {
-        renderHomeInfoList();
+        renderHomeInfoBlocks();
+    }
+    if (homeLatestList) {
+        renderHomeLatestList();
     }
 
-    function renderHomeInfoList() {
+    function renderHomeInfoBlocks() {
         const list = getInfoList();
-        const approved = list.filter(item => item.status === 'approved').slice(0, 5);
+        const approved = list.filter(item => item.status === 'approved').slice(0, 6);
 
         if (approved.length === 0) {
-            homeInfoList.innerHTML = '<div style="text-align:center;padding:30px;color:#999;"><p>暂无信息，<a href="publish.html" style="color:#e8491d;">立即发布</a></p></div>';
+            homeInfoList.innerHTML = '<li style="text-align:center;padding:60px 20px;list-style:none;width:100%;color:#999;"><p>暂无信息，<a href="publish.html" style="color:#e8491d;">立即发布</a></p></li>';
             return;
         }
 
@@ -338,20 +343,59 @@ document.addEventListener('DOMContentLoaded', function() {
         approved.forEach(item => {
             const desc = item.content.replace(/<[^>]*>/g, '').substring(0, 60);
             html += `
-                <a href="info-detail.html?id=${item.id}" class="home-info-item">
-                    <span class="home-info-tag ${item.category}">${item.categoryName}</span>
-                    <div class="home-info-content">
-                        <h3>${escapeHtml(item.title)}</h3>
-                        <p>${escapeHtml(desc)}${item.content.length > 60 ? '...' : ''}</p>
-                    </div>
-                    <div class="home-info-meta">
-                        <span>📅 ${item.dateStr}</span>
-                        <span>👤 ${escapeHtml(item.contact)}</span>
-                    </div>
-                </a>
+                <li>
+                    <a href="info-detail.html?id=${item.id}">
+                        <div class="inD_c_t">
+                            <div class="up-graybox">
+                                <p class="stit">查看详情</p>
+                                <span class="line linet"></span>
+                                <span class="line lineb"></span>
+                            </div>
+                            <p style="font-size:48px;text-align:center;padding:30px 0;background:#f0f4f8;">📄</p>
+                        </div>
+                        <div class="inD_c_e">
+                            <dt>${escapeHtml(item.title)}</dt>
+                            <dd>
+                                <p>${escapeHtml(desc)}${item.content.length > 60 ? '...' : ''}</p>
+                                <span>${item.dateStr}　👤 ${escapeHtml(item.contact)}　📞 ${escapeHtml(item.phone)}<i></i></span>
+                            </dd>
+                        </div>
+                    </a>
+                </li>
             `;
         });
         homeInfoList.innerHTML = html;
+    }
+
+    function renderHomeLatestList() {
+        const list = getInfoList();
+        const approved = list.filter(item => item.status === 'approved').slice(0, 6);
+
+        if (approved.length === 0) {
+            homeLatestList.innerHTML = '<li style="text-align:center;padding:40px;list-style:none;width:100%;color:#999;">暂无最新信息</li>';
+            return;
+        }
+
+        let html = '';
+        approved.forEach(item => {
+            const desc = item.content.replace(/<[^>]*>/g, '').substring(0, 80);
+            html += `
+                <li>
+                    <a href="info-detail.html?id=${item.id}">
+                        <div class="inC_c_T">
+                            <p style="font-size:48px;text-align:center;padding:40px 0;background:#f0f4f8;">📄</p>
+                            <div><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M15 12h-5v-2h5v2zm-7-4h9v-2h-9v2zm0 6h9v-2h-9v2zm10-10v16h-14v-16h14zm2-2h-18v20h18v-20z'/%3E%3C/svg%3E" alt="view"></div>
+                        </div>
+                        <div class="inC_c_e">
+                            <h3>${escapeHtml(item.title)}</h3>
+                            <p>${item.dateStr}　👤 ${escapeHtml(item.contact)}<span class="bg"></span></p>
+                        </div>
+                        <span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span>
+                    </a>
+                </li>
+            `;
+        });
+        homeLatestList.innerHTML = html;
     }
 
     // ===== 原有功能 =====
