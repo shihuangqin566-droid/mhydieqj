@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息发布 - 成都三木易科技有限公司</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 顶部栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <span>欢迎访问成都三木易科技有限公司官网！</span>
+            <span class="top-contact">电话：18048576055</span>
+        </div>
+    </div>
+
+    <!-- 头部 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>成都三木易科技有限公司</h1>
+                <p>专业ICP+EDI许可证办理</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="list-icp.html">ICP许可证</a></li>
+                    <li><a href="list-edi.html">EDI许可证</a></li>
+                    <li><a href="list-beian.html">备案代办</a></li>
+                    <li><a href="list-news.html">新闻资讯</a></li>
+                    <li><a href="shop.html">在线商城</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="list-info.html" class="active">信息发布</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="page-banner">
+        <div class="container">
+            <h2>信息发布</h2>
+            <p>免费发布您的业务信息，获取更多曝光机会</p>
+        </div>
+    </section>
+
+    <!-- 信息发布表单 -->
+    <section class="publish-section">
+        <div class="container">
+            <div class="publish-wrapper">
+                <div class="publish-tabs">
+                    <a href="list-info.html" class="publish-tab">信息列表</a>
+                    <a href="publish.html" class="publish-tab active">发布信息</a>
+                </div>
+                <div class="publish-form-container">
+                    <h3>发布信息</h3>
+                    <p class="publish-desc">填写以下信息，提交后经管理员审核即可展示</p>
+                    <form id="publishForm" class="publish-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="infoTitle">信息标题 <span class="required">*</span></label>
+                                <input type="text" id="infoTitle" placeholder="请输入信息标题" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="infoCategory">信息分类 <span class="required">*</span></label>
+                                <select id="infoCategory" required>
+                                    <option value="">请选择分类</option>
+                                    <option value="icp">ICP许可证</option>
+                                    <option value="edi">EDI许可证</option>
+                                    <option value="beian">网站备案</option>
+                                    <option value="website">网站建设</option>
+                                    <option value="software">软件开发</option>
+                                    <option value="operation">运维服务</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="infoContact">联系人 <span class="required">*</span></label>
+                                <input type="text" id="infoContact" placeholder="请输入联系人姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="infoPhone">联系电话 <span class="required">*</span></label>
+                                <input type="tel" id="infoPhone" placeholder="请输入联系电话" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="infoArea">服务区域</label>
+                                <input type="text" id="infoArea" placeholder="如：四川 - 成都">
+                            </div>
+                            <div class="form-group">
+                                <label for="infoEmail">电子邮箱</label>
+                                <input type="email" id="infoEmail" placeholder="请输入电子邮箱">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="infoContent">信息内容 <span class="required">*</span></label>
+                            <textarea id="infoContent" rows="8" placeholder="请详细描述您的业务信息、服务内容等" required></textarea>
+                        </div>
+                        <div class="form-group form-agreement">
+                            <label>
+                                <input type="checkbox" id="agreeCheck" required>
+                                我已阅读并同意 <a href="#" class="link">《用户服务协议》</a> 和 <a href="#" class="link">《隐私政策》</a>
+                            </label>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn">提交信息</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <div class="footer-col">
+                    <h3>成都三木易科技有限公司</h3>
+                    <p>专业ICP许可证、EDI许可证办理服务商</p>
+                    <p>电话：18048576055</p>
+                    <p>邮箱：545482979@qq.com</p>
+                    <p>地址：四川省成都市</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="list-icp.html">ICP许可证</a></li>
+                        <li><a href="list-edi.html">EDI许可证</a></li>
+                        <li><a href="list-beian.html">备案代办</a></li>
+                        <li><a href="list-news.html">新闻资讯</a></li>
+                        <li><a href="shop.html">在线商城</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>业务范围</h3>
+                    <ul>
+                        <li><a href="list-icp.html">ICP许可证办理</a></li>
+                        <li><a href="list-edi.html">EDI许可证办理</a></li>
+                        <li><a href="list-beian.html">网站备案代办</a></li>
+                        <li><a href="list-icp.html">资质变更续期</a></li>
+                        <li><a href="list-news.html">行业资讯</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <p>电话：18048576055</p>
+                    <p>邮箱：545482979@qq.com</p>
+                    <p>地址：四川省成都市</p>
+                    <p>备案：蜀ICP备2026032808号</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 成都三木易科技有限公司　<a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2026032808号</a></p>
+                <p>备案名称：三木易 | 域名：opcsq.com | 备案接入：阿里云</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 浮动联系方式 -->
+    <div class="float-contact">
+        <a href="tel:18048576055" class="float-item">
+            <span>📞</span>
+            <small>18048576055</small>
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
