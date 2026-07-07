@@ -37,7 +37,7 @@
         <div class="content-card fade-in">
           <h3>近期涨幅回顾</h3>
           <div style="padding:0;">
-            <div v-for="(item, i) in gainReviews" :key="i" style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border-light);font-size:14px;">
+            <div v-for="(item, i) in gainReviews" :key="i" style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;">
               <span class="tag" :class="item.period === '飙升中' ? 'tag-hot' : 'tag-new'">{{ item.period }}</span>
               <span style="flex:1;color:var(--text-secondary);">{{ item.desc }}</span>
               <span style="font-weight:700;color:#e53935;">+{{ item.gain }}%</span>

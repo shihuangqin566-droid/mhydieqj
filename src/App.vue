@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header class="site-header">
+    <header class="site-header" :class="{ scrolled: scrolled }">
       <div class="inner">
         <router-link to="/" class="logo">
           <span class="logo-icon">东</span>
@@ -56,6 +56,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+
 const menuOpen = ref(false)
+const scrolled = ref(false)
+
+const handleScroll = () => {
+  scrolled.value = window.scrollY > 20
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>

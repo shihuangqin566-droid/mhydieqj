@@ -18,7 +18,7 @@
                 <div>
                   <strong>服务热线</strong>
                   <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">400-000-0000</p>
-                  <p style="color:var(--text-light);font-size:12px;">工作日 9:00 - 18:00</p>
+                  <p style="color:var(--text-muted);font-size:12px;">工作日 9:00 - 18:00</p>
                 </div>
               </div>
               <div class="contact-info-item">
@@ -64,7 +64,7 @@
 
         <div class="content-card fade-in" style="margin-top:24px;">
           <h3>公司位置</h3>
-          <div style="background:var(--jb-bg-alt);border-radius:8px;padding:48px;text-align:center;color:var(--text-light);">
+          <div style="background:var(--jb-bg-alt);border-radius:8px;padding:48px;text-align:center;color:var(--text-muted);">
             <p style="font-size:16px;margin-bottom:8px;color:var(--jb-text);">北京市朝阳区金融街88号 · 东子证券大厦</p>
             <p style="font-size:14px;">地铁2号线金融街站A口出，步行500米即到</p>
           </div>

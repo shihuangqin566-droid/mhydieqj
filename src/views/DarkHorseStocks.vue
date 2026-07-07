@@ -34,7 +34,7 @@
             </thead>
             <tbody>
               <tr v-for="(item, i) in topPotential" :key="i">
-                <td style="color:var(--text-light);">{{ item.code }}</td>
+                <td style="color:var(--text-muted);">{{ item.code }}</td>
                 <td><strong>{{ item.name }}</strong></td>
                 <td>{{ item.sector }}</td>
                 <td>
