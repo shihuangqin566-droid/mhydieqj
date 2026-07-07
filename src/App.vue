@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- 市场行情跑马灯 -->
+    <MarketTicker />
+
     <!-- 导航栏 -->
     <nav class="navbar" :class="{ scrolled: scrolled }">
       <div class="container">
@@ -59,6 +62,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import MarketTicker from './components/MarketTicker.vue'
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
