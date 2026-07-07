@@ -1,16 +1,12 @@
 /* ============================================================
    Design System — 东子证券
-   Premium Brand · Swiss Design · Modern SaaS
+   Creative Direction · Premium Brand · Swiss Design
    ============================================================ */
 
-/* Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* ============================================================
-   Tokens
-   ============================================================ */
 :root {
-  /* Background — 三种近白层次 */
+  /* Background — 暖白层次 */
   --bg: #FAFAF8;
   --bg-alt: #F7F7F5;
   --bg-card: #F4F4F2;
@@ -20,19 +16,17 @@
   --text-secondary: #666666;
   --text-muted: #999999;
 
-  /* Accent — 深绿色，仅一种 */
+  /* Accent — 深绿，唯一强调色 */
   --accent: #1a5632;
   --accent-hover: #144528;
   --accent-light: rgba(26,86,50,0.04);
   --accent-border: rgba(26,86,50,0.12);
 
-  /* Border */
+  /* Border & Shadow */
   --border: rgba(0,0,0,0.06);
-
-  /* Shadow — 极轻 */
   --shadow: 0 8px 30px rgba(0,0,0,0.05);
 
-  /* Radius — 统一高级圆角 */
+  /* Radius */
   --radius-btn: 14px;
   --radius-card: 20px;
 
@@ -47,9 +41,6 @@
   --transition: 300ms ease;
 }
 
-/* ============================================================
-   Reset
-   ============================================================ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
@@ -68,9 +59,6 @@ a:hover { opacity: 0.7; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 
-/* ============================================================
-   Layout
-   ============================================================ */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -85,6 +73,9 @@ img { max-width: 100%; display: block; }
   background: var(--bg-alt);
 }
 
+/* ============================================================
+   Typography
+   ============================================================ */
 .section-header {
   margin-bottom: 64px;
   max-width: 640px;
@@ -100,10 +91,10 @@ img { max-width: 100%; display: block; }
 }
 
 .section-header h2 {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.15;
+  line-height: 1.12;
   margin-bottom: 16px;
 }
 
@@ -215,11 +206,11 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================================
-   Hero — 左文右图
+   Hero — 左文右Dashboard
    ============================================================ */
 .hero {
-  padding: 160px 0 100px;
-  min-height: 90vh;
+  padding: 160px 0 120px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -253,26 +244,27 @@ img { max-width: 100%; display: block; }
   margin-bottom: 28px;
 }
 
-.hero h1 {
-  font-size: 64px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin-bottom: 16px;
-}
-
 .hero .tagline {
   font-size: 20px;
   color: var(--text-secondary);
   font-weight: 400;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 {
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  margin-bottom: 20px;
 }
 
 .hero .subtitle {
-  font-size: 17px;
+  font-size: 18px;
   color: var(--text-muted);
   line-height: 1.8;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
   max-width: 440px;
 }
 
@@ -281,68 +273,26 @@ img { max-width: 100%; display: block; }
   gap: 12px;
 }
 
-/* Hero Visual — 抽象几何装饰 */
-.hero-decor {
-  width: 400px;
-  height: 500px;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-decor::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: 32px;
-  right: 32px;
-  bottom: 32px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.hero-decor::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  background: var(--accent);
-  border-radius: 50%;
-  opacity: 0.03;
-}
-
-.hero-decor .line {
-  position: absolute;
-  background: var(--border);
-}
-
-.hero-decor .line:nth-child(1) { top: 50%; left: 32px; right: 32px; height: 1px; }
-.hero-decor .line:nth-child(2) { left: 50%; top: 32px; bottom: 32px; width: 1px; }
-
-/* Stats */
-.stats-row {
+.hero-stats {
   display: flex;
-  gap: 56px;
+  gap: 48px;
   margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
 }
 
-.stat-item { }
+.hero-stat-item { }
 
-.stat-item .number {
-  font-size: 36px;
+.hero-stat-item .number {
+  font-size: 32px;
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.03em;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-.stat-item .label {
+.hero-stat-item .label {
   font-size: 14px;
   color: var(--text-muted);
   font-weight: 500;
@@ -353,8 +303,8 @@ img { max-width: 100%; display: block; }
   .hero .container { grid-template-columns: 1fr; gap: 48px; }
   .hero-content { max-width: 100%; }
   .hero-visual { display: none; }
-  .hero h1 { font-size: 42px; }
-  .stats-row { gap: 32px; flex-wrap: wrap; }
+  .hero h1 { font-size: 48px; }
+  .hero-stats { gap: 32px; flex-wrap: wrap; }
 }
 
 /* ============================================================
@@ -448,7 +398,7 @@ img { max-width: 100%; display: block; }
 
 .table-wrap:hover { box-shadow: var(--shadow); }
 
-.table-wrap .table-header {
+.table-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -456,18 +406,18 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--border);
 }
 
-.table-wrap .table-header h3 {
+.table-header h3 {
   font-size: 17px;
   font-weight: 700;
 }
 
-.table-wrap .table-header .more-link {
+.table-header .more-link {
   font-size: 14px;
   color: var(--accent);
   font-weight: 500;
 }
 
-.table-wrap .table-header .more-link:hover { opacity: 0.7; }
+.table-header .more-link:hover { opacity: 0.7; }
 
 .data-table { width: 100%; border-collapse: collapse; }
 
@@ -752,7 +702,7 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(24px);
   transition: opacity 600ms ease, transform 600ms ease;
 }
 
@@ -764,15 +714,12 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .container { padding: 0 24px; }
   :root { --section-padding: 80px 0; }
-  .hero h1 { font-size: 34px; }
-  .hero .tagline { font-size: 17px; }
-  .hero .subtitle { font-size: 15px; }
-  .hero-decor { display: none; }
+  .hero h1 { font-size: 36px; }
   .section-header h2 { font-size: 28px; }
   .section-header .subtitle { font-size: 16px; }
   .card { padding: 28px; }
   .card-grid { grid-template-columns: 1fr; }
-  .table-wrap .table-header { padding: 20px 24px; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .table-header { padding: 20px 24px; flex-direction: column; gap: 8px; align-items: flex-start; }
   .data-table th, .data-table td { padding: 10px 16px; font-size: 13px; }
   .page-banner h1 { font-size: 30px; }
   .page-banner { padding: 120px 0 48px; }

@@ -1,6 +1,8 @@
 <template>
   <div class="home-page">
-    <!-- Hero — 左文右图 -->
+    <!-- ==========================================
+         Hero — 左侧品牌文案 + 右侧真实 Dashboard
+         ========================================== -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -18,31 +20,30 @@
               挖掘黑马机会
             </router-link>
           </div>
-          <div class="stats-row">
-            <div class="stat-item">
+          <div class="hero-stats">
+            <div class="hero-stat-item">
               <div class="number">15+</div>
               <div class="label">板块覆盖</div>
             </div>
-            <div class="stat-item">
+            <div class="hero-stat-item">
               <div class="number" style="color:var(--accent);">101%</div>
               <div class="label">最大个股涨幅</div>
             </div>
-            <div class="stat-item">
+            <div class="hero-stat-item">
               <div class="number">5</div>
               <div class="label">评分维度</div>
             </div>
           </div>
         </div>
         <div class="hero-visual">
-          <div class="hero-decor">
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
+          <Dashboard />
         </div>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ==========================================
+         About — 品牌故事
+         ========================================== -->
     <section class="section section-alt">
       <div class="container">
         <div class="section-header fade-in" ref="aboutTitle">
@@ -64,7 +65,9 @@
       </div>
     </section>
 
-    <!-- 潜力板块 -->
+    <!-- ==========================================
+         Sectors — 潜力板块
+         ========================================== -->
     <section class="section">
       <div class="container">
         <div class="section-header fade-in" ref="potentialTitle">
@@ -87,7 +90,7 @@
             </thead>
             <tbody>
               <tr v-for="(item, i) in topSectors" :key="i">
-                <td><span class="rank-badge" :class="rankBadge(i)">{{ i + 1 }}</span></td>
+                <td><span class="rank-badge" :class="i === 0 ? 'gold' : ''">{{ i + 1 }}</span></td>
                 <td style="color:var(--text);font-weight:600;">{{ item.name }}</td>
                 <td class="up-red">{{ item.score }}</td>
               </tr>
@@ -97,7 +100,9 @@
       </div>
     </section>
 
-    <!-- 黑马板块 -->
+    <!-- ==========================================
+         Dark Horse — 黑马板块
+         ========================================== -->
     <section class="section section-alt">
       <div class="container">
         <div class="section-header fade-in" ref="horseSectorTitle">
@@ -142,7 +147,9 @@
       </div>
     </section>
 
-    <!-- 黑马个股 -->
+    <!-- ==========================================
+         Stocks — 黑马个股
+         ========================================== -->
     <section class="section">
       <div class="container">
         <div class="section-header fade-in" ref="stockTitle">
@@ -189,7 +196,9 @@
       </div>
     </section>
 
-    <!-- 联系我们 -->
+    <!-- ==========================================
+         Contact — 联系我们
+         ========================================== -->
     <section class="section section-alt" id="contact-home">
       <div class="container">
         <div class="section-header fade-in" ref="contactTitle">
@@ -246,6 +255,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import Dashboard from '../components/Dashboard.vue'
 
 const topSectors = [
   { name: '半导体', score: 46 },
@@ -277,8 +287,6 @@ const gainReviews = [
   { tag: '飙升', tagClass: 'tag-hot', desc: '光学光电子 · 6月29日入池', gain: '+12%' },
   { tag: '启动', tagClass: 'tag-new', desc: '化学制药 · 6月26日入池', gain: '+10%' },
 ]
-
-const rankBadge = (i) => i === 0 ? 'gold' : ''
 
 const form = ref({ name: '', phone: '', message: '' })
 const submitting = ref(false)
