@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <ThreeParticles />
     <header class="site-header">
       <div class="inner">
         <router-link to="/" class="logo">
@@ -57,5 +58,6 @@
 
 <script setup>
 import { ref } from 'vue'
+import ThreeParticles from './components/ThreeParticles.vue'
 const menuOpen = ref(false)
 </script>
