@@ -20,22 +20,20 @@
       </div>
     </section>
 
-    <!-- Stats — 暗色区，与 Hero 连续 -->
-    <div class="stats-row-wrap">
-      <div class="container">
-        <div class="stats-row">
-          <div class="stat-item">
-            <div class="number">15+</div>
-            <div class="label">板块覆盖</div>
-          </div>
-          <div class="stat-item">
-            <div class="number" style="color:#f87171;">101%</div>
-            <div class="label">最大个股涨幅</div>
-          </div>
-          <div class="stat-item">
-            <div class="number">5</div>
-            <div class="label">评分维度</div>
-          </div>
+    <!-- Stats -->
+    <div class="container" style="padding-bottom:80px;">
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="number">15+</div>
+          <div class="label">板块覆盖</div>
+        </div>
+        <div class="stat-item">
+          <div class="number" style="color:#e74c3c;">101%</div>
+          <div class="label">最大个股涨幅</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">5</div>
+          <div class="label">评分维度</div>
         </div>
       </div>
     </div>
@@ -49,10 +47,10 @@
           <p class="subtitle">以数据为基石，以模型为引擎，为投资者创造价值</p>
         </div>
         <div class="glass-card fade-in" ref="aboutContent" style="max-width:720px;margin:0 auto;text-align:center;">
-            <p style="font-size:16px;color:var(--text-dark-secondary);line-height:2;margin-bottom:20px;">
+            <p style="font-size:16px;color:var(--text-secondary);line-height:2;margin-bottom:20px;">
               东子证券是一家专注于证券市场研究与投资咨询的专业金融机构。我们拥有自主研发的板块评分体系，从板块指数涨幅、资金持续流入、趋势强度、人气热度、基本面五大维度，对A股各大板块进行全方位量化评分。
             </p>
-            <p style="font-size:16px;color:var(--text-dark-secondary);line-height:2;margin-bottom:24px;">
+            <p style="font-size:16px;color:var(--text-secondary);line-height:2;margin-bottom:24px;">
               同时，我们独创黑马板块与黑马个股挖掘模型，通过启动中/飙升中板块筛选、人气榜过滤、技术面突破确认等多重机制，精准锁定最具上涨潜力的投资标的。
             </p>
             <router-link to="/contact" class="btn btn-ghost">
