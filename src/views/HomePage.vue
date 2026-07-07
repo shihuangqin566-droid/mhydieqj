@@ -1,30 +1,27 @@
 <template>
   <div class="home-page">
-    <!-- Hero — 非对称布局 -->
+    <!-- Hero — Winden 风格 -->
     <section class="hero">
       <div class="container">
-        <div class="hero-left">
-          <div class="hero-badge">数据驱动 · 量化投资</div>
-          <h1><span class="accent">东子</span>证券</h1>
-          <p class="tagline">专业投资研究平台</p>
-          <p class="subtitle">以数据驱动的板块评分体系和黑马挖掘模型，精准把握市场脉搏</p>
-          <div class="hero-actions">
-            <router-link to="/potential-sectors" class="btn btn-primary">
-              查看潜力板块
-            </router-link>
-            <router-link to="/darkhorse-sectors" class="btn btn-secondary">
-              挖掘黑马机会
-            </router-link>
-          </div>
-        </div>
-        <div class="hero-right">
-          <div class="hero-decor"></div>
+        <div class="hero-badge">数据驱动 · 量化投资</div>
+        <h1>
+          <span class="accent">东子证券</span>
+        </h1>
+        <p class="tagline">专业投资研究平台</p>
+        <p class="subtitle">以数据驱动的板块评分体系和黑马挖掘模型，精准把握市场脉搏</p>
+        <div class="hero-actions">
+          <router-link to="/potential-sectors" class="btn btn-primary">
+            查看潜力板块
+          </router-link>
+          <router-link to="/darkhorse-sectors" class="btn btn-secondary">
+            挖掘黑马机会
+          </router-link>
         </div>
       </div>
     </section>
 
-    <!-- Stats — 极简分割线 -->
-    <section>
+    <!-- Stats -->
+    <section style="padding: 0 0 80px;">
       <div class="container">
         <div class="stats-row">
           <div class="stat-item">
@@ -32,7 +29,7 @@
             <div class="label">板块覆盖</div>
           </div>
           <div class="stat-item">
-            <div class="number" style="color:#a0524a;">101%</div>
+            <div class="number" style="color:#f87171;">101%</div>
             <div class="label">最大个股涨幅</div>
           </div>
           <div class="stat-item">
@@ -51,19 +48,17 @@
           <h2>关于东子证券</h2>
           <p class="subtitle">以数据为基石，以模型为引擎，为投资者创造价值</p>
         </div>
-        <div class="feature-grid fade-in" ref="aboutContent">
-          <div class="feature-card" style="grid-column:1/-1;max-width:720px;margin:0 auto;text-align:center;border:none;background:transparent;">
-            <p style="font-size:15px;color:var(--text-secondary);line-height:2;margin-bottom:20px;">
+        <div class="glass-card fade-in" ref="aboutContent" style="max-width:720px;margin:0 auto;text-align:center;">
+            <p style="font-size:16px;color:var(--text-secondary);line-height:2;margin-bottom:20px;">
               东子证券是一家专注于证券市场研究与投资咨询的专业金融机构。我们拥有自主研发的板块评分体系，从板块指数涨幅、资金持续流入、趋势强度、人气热度、基本面五大维度，对A股各大板块进行全方位量化评分。
             </p>
-            <p style="font-size:15px;color:var(--text-secondary);line-height:2;margin-bottom:24px;">
+            <p style="font-size:16px;color:var(--text-secondary);line-height:2;margin-bottom:24px;">
               同时，我们独创黑马板块与黑马个股挖掘模型，通过启动中/飙升中板块筛选、人气榜过滤、技术面突破确认等多重机制，精准锁定最具上涨潜力的投资标的。
             </p>
             <router-link to="/contact" class="btn btn-ghost">
               了解更多 →
             </router-link>
           </div>
-        </div>
       </div>
     </section>
 
