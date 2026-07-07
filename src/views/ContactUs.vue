@@ -63,7 +63,7 @@
         </div>
 
         <div class="content-card fade-in" style="margin-top:24px;">
-          <h3>📍 公司位置</h3>
+          <h3>公司位置</h3>
           <div style="background:var(--jb-bg-alt);border-radius:8px;padding:48px;text-align:center;color:var(--text-light);">
             <p style="font-size:16px;margin-bottom:8px;color:var(--jb-text);">北京市朝阳区金融街88号 · 东子证券大厦</p>
             <p style="font-size:14px;">地铁2号线金融街站A口出，步行500米即到</p>

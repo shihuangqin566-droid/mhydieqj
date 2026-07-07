@@ -10,7 +10,7 @@
     <section class="page-content">
       <div class="container">
         <div class="content-card fade-in">
-          <h3>🔥 启动 · 飙升板块榜</h3>
+          <h3>启动 · 飙升板块榜</h3>
           <p style="color:var(--text-secondary);margin-bottom:16px;">出品人：东子证券 ｜ 日期：2026年6月29日</p>
           <table class="data-table">
             <thead>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="content-card fade-in">
-          <h3>📈 近期涨幅回顾</h3>
+          <h3>近期涨幅回顾</h3>
           <div style="padding:0;">
             <div v-for="(item, i) in gainReviews" :key="i" style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border-light);font-size:14px;">
               <span class="tag" :class="item.period === '飙升中' ? 'tag-hot' : 'tag-new'">{{ item.period }}</span>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="content-card fade-in">
-          <h3>📖 板块定义说明</h3>
+          <h3>板块定义说明</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
             <div style="background:#fce4ec;border-radius:8px;padding:20px;">
               <h4 style="color:#c62828;margin-bottom:6px;font-size:16px;">🔥 飙升中板块</h4>

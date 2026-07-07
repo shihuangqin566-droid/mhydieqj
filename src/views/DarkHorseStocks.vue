@@ -10,7 +10,7 @@
     <section class="page-content">
       <div class="container">
         <div class="content-card fade-in">
-          <h3>🔍 黑马个股筛选逻辑</h3>
+          <h3>黑马个股筛选逻辑</h3>
           <ol style="padding-left:20px;color:var(--text-secondary);line-height:2.4;font-size:15px;">
             <li>选取<strong style="color:var(--accent);">启动中板块</strong>和<strong style="color:var(--accent);">飙升中板块</strong>中的所有个股作为基础池</li>
             <li>筛选位于东方财富、同花顺、雪球人气榜前100名的标的</li>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="content-card fade-in">
-          <h3>🎯 最具上涨潜力黑马个股</h3>
+          <h3>最具上涨潜力黑马个股</h3>
           <p style="color:var(--text-secondary);margin-bottom:16px;">出品人：东子证券 ｜ 日期：2026年6月29日</p>
           <table class="data-table">
             <thead>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="content-card fade-in">
-          <h3>📊 黑马个股涨幅回顾</h3>
+          <h3>黑马个股涨幅回顾</h3>
           <table class="data-table">
             <thead>
               <tr>
