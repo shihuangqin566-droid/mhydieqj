@@ -20,8 +20,8 @@
       </div>
     </section>
 
-    <!-- Stats -->
-    <section style="padding: 0 0 80px;">
+    <!-- Stats — 暗色区，与 Hero 连续 -->
+    <div class="stats-row-wrap">
       <div class="container">
         <div class="stats-row">
           <div class="stat-item">
@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- About — 浅色区 -->
     <section class="section">
