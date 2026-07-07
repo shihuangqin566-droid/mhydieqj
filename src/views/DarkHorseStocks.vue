@@ -2,9 +2,6 @@
   <div class="darkhorse-stocks-page">
     <section class="page-banner">
       <div class="container">
-        <div class="hero-tag" style="display:inline-flex;align-items:center;gap:8px;padding:6px 20px;background:rgba(255,0,128,0.08);border:1px solid rgba(255,0,128,0.2);border-radius:9999px;font-size:13px;color:var(--neon-400);margin-bottom:20px;">
-          个股研究
-        </div>
         <h1>黑马个股研究</h1>
         <p>多维度筛选、技术面确认、涨幅跟踪，挖掘最具上涨潜力的黑马个股</p>
       </div>
@@ -14,8 +11,8 @@
       <div class="container">
         <div class="content-card fade-in">
           <h3>🔍 黑马个股筛选逻辑</h3>
-          <ol style="padding-left:20px;color:var(--gray-300);line-height:2.4;font-size:15px;">
-            <li>选取<strong style="color:var(--neon-400);">启动中板块</strong>和<strong style="color:var(--neon-400);">飙升中板块</strong>中的所有个股作为基础池</li>
+          <ol style="padding-left:20px;color:var(--jb-text-secondary);line-height:2.4;font-size:15px;">
+            <li>选取<strong style="color:var(--jb-accent);">启动中板块</strong>和<strong style="color:var(--jb-accent);">飙升中板块</strong>中的所有个股作为基础池</li>
             <li>筛选位于东方财富、同花顺、雪球人气榜前100名的标的</li>
             <li>结合技术面（突破平台形态、均线多头排列）进行二次筛选</li>
             <li>综合评估最新一波行情阶段涨幅，确定最具上涨潜力的黑马个股</li>
@@ -24,7 +21,7 @@
 
         <div class="content-card fade-in">
           <h3>🎯 最具上涨潜力黑马个股</h3>
-          <p style="color:var(--gray-400);margin-bottom:20px;">出品人：东子证券 ｜ 日期：2026年6月29日</p>
+          <p style="color:var(--jb-text-secondary);margin-bottom:16px;">出品人：东子证券 ｜ 日期：2026年6月29日</p>
           <table class="data-table">
             <thead>
               <tr>
@@ -37,13 +34,11 @@
             </thead>
             <tbody>
               <tr v-for="(item, i) in topPotential" :key="i">
-                <td style="color:var(--gray-400);">{{ item.code }}</td>
+                <td style="color:var(--jb-text-light);">{{ item.code }}</td>
                 <td><strong>{{ item.name }}</strong></td>
                 <td>{{ item.sector }}</td>
                 <td>
-                  <span class="tag" :class="item.breakout === '是' ? 'tag-up' : 'tag-primary'">
-                    {{ item.breakout }}
-                  </span>
+                  <span class="tag" :class="item.breakout === '是' ? 'tag-up' : 'tag-primary'">{{ item.breakout }}</span>
                 </td>
                 <td class="up-red">{{ item.gain }}%</td>
               </tr>
@@ -71,7 +66,7 @@
               </tr>
             </tbody>
           </table>
-          <div style="margin-top:20px;padding:16px;background:rgba(251,146,60,0.06);border:1px solid rgba(251,146,60,0.12);border-radius:var(--radius-sm);font-size:14px;color:var(--orange-400);">
+          <div style="margin-top:16px;padding:12px;background:#fff8e1;border-radius:6px;font-size:13px;color:#795548;">
             ⚠️ 注：以上涨幅为入池日至统计日期间最大涨幅，过往业绩不预示未来表现，投资有风险。
           </div>
         </div>

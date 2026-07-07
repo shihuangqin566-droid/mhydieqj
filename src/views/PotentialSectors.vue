@@ -2,9 +2,6 @@
   <div class="potential-sectors-page">
     <section class="page-banner">
       <div class="container">
-        <div class="hero-tag" style="display:inline-flex;align-items:center;gap:8px;padding:6px 20px;background:rgba(255,0,128,0.08);border:1px solid rgba(255,0,128,0.2);border-radius:9999px;font-size:13px;color:var(--neon-400);margin-bottom:20px;">
-          评分体系
-        </div>
         <h1>潜力板块得分</h1>
         <p>东子证券独家评分体系，全方位量化评估A股各大板块投资潜力</p>
       </div>
@@ -14,7 +11,7 @@
       <div class="container">
         <div class="content-card fade-in">
           <h3>📐 评分标准说明</h3>
-          <p style="color:var(--gray-400);margin-bottom:24px;">
+          <p style="color:var(--jb-text-secondary);margin-bottom:20px;">
             东子证券潜力板块评分体系由五大维度组成，总分100分，从技术面、资金面、人气面、基本面全面评估板块潜力。
           </p>
           <div class="score-method">
@@ -28,7 +25,7 @@
 
         <div class="content-card fade-in">
           <h3>📊 2026年7月6日 · 潜力板块得分榜</h3>
-          <p style="color:var(--gray-400);margin-bottom:20px;">出品人：东子证券</p>
+          <p style="color:var(--jb-text-secondary);margin-bottom:16px;">出品人：东子证券</p>
           <table class="data-table">
             <thead>
               <tr>
@@ -39,9 +36,7 @@
             </thead>
             <tbody>
               <tr v-for="(item, i) in latestRanking" :key="i">
-                <td>
-                  <span class="rank-badge" :class="rankBadge(i)">{{ item.rank }}</span>
-                </td>
+                <td><span class="rank-badge" :class="rankBadge(i)">{{ item.rank }}</span></td>
                 <td><strong>{{ item.name }}</strong></td>
                 <td class="up-red">{{ item.score }}</td>
               </tr>
@@ -51,7 +46,7 @@
 
         <div class="content-card fade-in">
           <h3>📅 2026年6月29日 · 历史得分榜</h3>
-          <p style="color:var(--gray-400);margin-bottom:20px;">出品人：东子证券</p>
+          <p style="color:var(--jb-text-secondary);margin-bottom:16px;">出品人：东子证券</p>
           <table class="data-table">
             <thead>
               <tr>
@@ -62,9 +57,7 @@
             </thead>
             <tbody>
               <tr v-for="(item, i) in prevRanking" :key="i">
-                <td>
-                  <span class="rank-badge" :class="rankBadge(i)">{{ item.rank }}</span>
-                </td>
+                <td><span class="rank-badge" :class="rankBadge(i)">{{ item.rank }}</span></td>
                 <td><strong>{{ item.name }}</strong></td>
                 <td class="up-red">{{ item.score }}</td>
               </tr>

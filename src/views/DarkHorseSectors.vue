@@ -2,9 +2,6 @@
   <div class="darkhorse-sectors-page">
     <section class="page-banner">
       <div class="container">
-        <div class="hero-tag" style="display:inline-flex;align-items:center;gap:8px;padding:6px 20px;background:rgba(255,0,128,0.08);border:1px solid rgba(255,0,128,0.2);border-radius:9999px;font-size:13px;color:var(--neon-400);margin-bottom:20px;">
-          黑马挖掘
-        </div>
         <h1>黑马板块</h1>
         <p>东子证券独家挖掘的启动中与飙升中板块，精准捕捉主升浪</p>
       </div>
@@ -14,7 +11,7 @@
       <div class="container">
         <div class="content-card fade-in">
           <h3>🔥 启动 · 飙升板块榜</h3>
-          <p style="color:var(--gray-400);margin-bottom:20px;">出品人：东子证券 ｜ 日期：2026年6月29日</p>
+          <p style="color:var(--jb-text-secondary);margin-bottom:16px;">出品人：东子证券 ｜ 日期：2026年6月29日</p>
           <table class="data-table">
             <thead>
               <tr>
@@ -29,9 +26,7 @@
                 <td>{{ item.date }}</td>
                 <td><strong>{{ item.name }}</strong></td>
                 <td>
-                  <span class="tag" :class="item.period === '飙升中' ? 'tag-hot' : 'tag-new'">
-                    {{ item.period }}
-                  </span>
+                  <span class="tag" :class="item.period === '飙升中' ? 'tag-hot' : 'tag-new'">{{ item.period }}</span>
                 </td>
                 <td class="up-red">{{ item.gain }}%</td>
               </tr>
@@ -41,29 +36,27 @@
 
         <div class="content-card fade-in">
           <h3>📈 近期涨幅回顾</h3>
-          <ul class="gain-list" style="padding:0;">
-            <li v-for="(item, i) in gainReviews" :key="i">
-              <span class="tag" :class="item.period === '飙升中' ? 'tag-hot' : 'tag-new'">
-                {{ item.period }}
-              </span>
-              {{ item.desc }}
-              <span class="gain-percent">+{{ item.gain }}%</span>
-            </li>
-          </ul>
+          <div style="padding:0;">
+            <div v-for="(item, i) in gainReviews" :key="i" style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--jb-border-light);font-size:14px;">
+              <span class="tag" :class="item.period === '飙升中' ? 'tag-hot' : 'tag-new'">{{ item.period }}</span>
+              <span style="flex:1;color:var(--jb-text-secondary);">{{ item.desc }}</span>
+              <span style="font-weight:700;color:#e53935;">+{{ item.gain }}%</span>
+            </div>
+          </div>
         </div>
 
         <div class="content-card fade-in">
           <h3>📖 板块定义说明</h3>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px;">
-            <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.12);border-radius:12px;padding:24px;">
-              <h4 style="color:var(--red-400);margin-bottom:8px;font-size:18px;">🔥 飙升中板块</h4>
-              <p style="color:var(--gray-400);font-size:14px;line-height:1.8;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+            <div style="background:#fce4ec;border-radius:8px;padding:20px;">
+              <h4 style="color:#c62828;margin-bottom:6px;font-size:16px;">🔥 飙升中板块</h4>
+              <p style="color:var(--jb-text-secondary);font-size:14px;line-height:1.8;">
                 已进入主升浪阶段，资金加速流入，短期涨幅可观，适合短线强势操作。
               </p>
             </div>
-            <div style="background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.12);border-radius:12px;padding:24px;">
-              <h4 style="color:var(--blue-400);margin-bottom:8px;font-size:18px;">🚀 启动中板块</h4>
-              <p style="color:var(--gray-400);font-size:14px;line-height:1.8;">
+            <div style="background:#e3f2fd;border-radius:8px;padding:20px;">
+              <h4 style="color:#1565c0;margin-bottom:6px;font-size:16px;">🚀 启动中板块</h4>
+              <p style="color:var(--jb-text-secondary);font-size:14px;line-height:1.8;">
                 处于底部启动初期，趋势刚刚形成，具备较大上涨空间，适合中线布局。
               </p>
             </div>

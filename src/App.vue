@@ -1,33 +1,30 @@
 <template>
   <div id="app">
-    <!-- 市场行情跑马灯 -->
-    <MarketTicker />
-
-    <!-- 导航栏 -->
-    <nav class="navbar" :class="{ scrolled: scrolled }">
-      <div class="container">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="inner">
         <router-link to="/" class="logo">
           <span class="logo-icon">东</span>
           东子证券
         </router-link>
         <button class="menu-toggle" @click="menuOpen = !menuOpen">☰</button>
-        <div class="nav-links" :class="{ open: menuOpen }">
+        <nav class="nav-links" :class="{ open: menuOpen }">
           <router-link to="/" @click="menuOpen = false">首页</router-link>
           <router-link to="/potential-sectors" @click="menuOpen = false">潜力板块</router-link>
           <router-link to="/darkhorse-sectors" @click="menuOpen = false">黑马板块</router-link>
           <router-link to="/darkhorse-stocks" @click="menuOpen = false">黑马个股</router-link>
           <router-link to="/contact" @click="menuOpen = false">联系我们</router-link>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </header>
 
     <main>
       <router-view />
     </main>
 
-    <!-- 页脚 -->
-    <footer class="footer">
-      <div class="container">
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="inner">
         <div>
           <div class="footer-logo">
             <span>东</span>
@@ -62,7 +59,6 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import MarketTicker from './components/MarketTicker.vue'
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
