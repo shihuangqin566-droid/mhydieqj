@@ -2,6 +2,9 @@
   <div class="potential-sectors-page">
     <section class="page-banner">
       <div class="container">
+        <div class="hero-tag" style="display:inline-flex;align-items:center;gap:8px;padding:6px 20px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:9999px;font-size:13px;color:var(--gold-400);margin-bottom:20px;">
+          评分体系
+        </div>
         <h1>潜力板块得分</h1>
         <p>东子证券独家评分体系，全方位量化评估A股各大板块投资潜力</p>
       </div>
@@ -9,10 +12,9 @@
 
     <section class="page-content">
       <div class="container">
-        <!-- 评分标准 -->
         <div class="content-card fade-in">
-          <h3>评分标准说明</h3>
-          <p style="color:var(--text-mid);margin-bottom:24px;">
+          <h3>📐 评分标准说明</h3>
+          <p style="color:var(--gray-400);margin-bottom:24px;">
             东子证券潜力板块评分体系由五大维度组成，总分100分，从技术面、资金面、人气面、基本面全面评估板块潜力。
           </p>
           <div class="score-method">
@@ -24,10 +26,9 @@
           </div>
         </div>
 
-        <!-- 2026-07-06 最新版 -->
         <div class="content-card fade-in">
-          <h3>2026年7月6日 潜力板块得分榜</h3>
-          <p style="color:var(--text-mid);margin-bottom:20px;">出品人：东子证券</p>
+          <h3>📊 2026年7月6日 · 潜力板块得分榜</h3>
+          <p style="color:var(--gray-400);margin-bottom:20px;">出品人：东子证券</p>
           <table class="data-table">
             <thead>
               <tr>
@@ -38,7 +39,9 @@
             </thead>
             <tbody>
               <tr v-for="(item, i) in latestRanking" :key="i">
-                <td><span class="tag" :class="rankTag(i)">{{ item.rank }}</span></td>
+                <td>
+                  <span class="rank-badge" :class="rankBadge(i)">{{ item.rank }}</span>
+                </td>
                 <td><strong>{{ item.name }}</strong></td>
                 <td class="up-red">{{ item.score }}</td>
               </tr>
@@ -46,10 +49,9 @@
           </table>
         </div>
 
-        <!-- 6月29日历史版 -->
         <div class="content-card fade-in">
-          <h3>2026年6月29日 潜力板块得分榜</h3>
-          <p style="color:var(--text-mid);margin-bottom:20px;">出品人：东子证券</p>
+          <h3>📅 2026年6月29日 · 历史得分榜</h3>
+          <p style="color:var(--gray-400);margin-bottom:20px;">出品人：东子证券</p>
           <table class="data-table">
             <thead>
               <tr>
@@ -60,7 +62,9 @@
             </thead>
             <tbody>
               <tr v-for="(item, i) in prevRanking" :key="i">
-                <td><span class="tag" :class="rankTag(i)">{{ item.rank }}</span></td>
+                <td>
+                  <span class="rank-badge" :class="rankBadge(i)">{{ item.rank }}</span>
+                </td>
                 <td><strong>{{ item.name }}</strong></td>
                 <td class="up-red">{{ item.score }}</td>
               </tr>
@@ -116,10 +120,11 @@ const prevRanking = [
   { rank: 12, name: '医疗器械', score: 30 },
 ]
 
-const rankTag = (i) => {
-  if (i < 3) return 'tag-hot'
-  if (i < 6) return 'tag-primary'
-  return 'tag-up'
+const rankBadge = (i) => {
+  if (i === 0) return 'gold'
+  if (i === 1) return 'silver'
+  if (i === 2) return 'bronze'
+  return 'default'
 }
 
 onMounted(() => {

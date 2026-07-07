@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- 导航栏 -->
     <nav class="navbar" :class="{ scrolled: scrolled }">
       <div class="container">
         <router-link to="/" class="logo">
@@ -16,13 +17,19 @@
         </div>
       </div>
     </nav>
+
     <main>
       <router-view />
     </main>
+
+    <!-- 页脚 -->
     <footer class="footer">
       <div class="container">
         <div>
-          <h3>东子证券</h3>
+          <div class="footer-logo">
+            <span>东</span>
+            东子证券
+          </div>
           <p>专注于证券市场研究与投资咨询，以数据驱动的板块评分体系和黑马挖掘模型，为投资者提供专业的投资建议。</p>
         </div>
         <div>
