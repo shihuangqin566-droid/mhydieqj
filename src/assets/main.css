@@ -16,11 +16,11 @@
   --text-secondary: #666666;
   --text-muted: #999999;
 
-  /* Accent — 深绿，唯一强调色 */
-  --accent: #1a5632;
-  --accent-hover: #144528;
-  --accent-light: rgba(26,86,50,0.04);
-  --accent-border: rgba(26,86,50,0.12);
+  /* Accent — 蓝紫色 */
+  --accent: #6c5ce7;
+  --accent-hover: #5a4bd1;
+  --accent-light: rgba(108,92,231,0.06);
+  --accent-border: rgba(108,92,231,0.15);
 
   /* Border & Shadow */
   --border: rgba(0,0,0,0.06);

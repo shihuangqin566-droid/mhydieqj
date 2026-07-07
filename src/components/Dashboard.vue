@@ -51,11 +51,11 @@
             <line x1="0" y1="80" x2="400" y2="80" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
             <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
             <!-- 面积填充 -->
-            <path d="M0,140 L30,130 L60,120 L90,100 L120,110 L150,85 L180,90 L210,70 L240,75 L270,50 L300,55 L330,35 L360,40 L390,30 L400,28 L400,160 L0,160 Z" fill="rgba(26,86,50,0.06)"/>
+            <path d="M0,140 L30,130 L60,120 L90,100 L120,110 L150,85 L180,90 L210,70 L240,75 L270,50 L300,55 L330,35 L360,40 L390,30 L400,28 L400,160 L0,160 Z" fill="rgba(108,92,231,0.06)"/>
             <!-- 折线 -->
-            <path d="M0,140 L30,130 L60,120 L90,100 L120,110 L150,85 L180,90 L210,70 L240,75 L270,50 L300,55 L330,35 L360,40 L390,30 L400,28" fill="none" stroke="#1a5632" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M0,140 L30,130 L60,120 L90,100 L120,110 L150,85 L180,90 L210,70 L240,75 L270,50 L300,55 L330,35 L360,40 L390,30 L400,28" fill="none" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <!-- 端点 -->
-            <circle cx="400" cy="28" r="3" fill="#1a5632"/>
+            <circle cx="400" cy="28" r="3" fill="#6c5ce7"/>
           </svg>
           <!-- X轴标签 -->
           <div class="chart-labels">
@@ -176,7 +176,7 @@ const rankClass = (i) => {
 .dash-logo {
   width: 26px;
   height: 26px;
-  background: #1a5632;
+  background: #6c5ce7;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -203,7 +203,7 @@ const rankClass = (i) => {
 .dash-status {
   width: 6px;
   height: 6px;
-  background: #27ae60;
+  background: #6c5ce7;
   border-radius: 50%;
 }
 
@@ -342,7 +342,7 @@ const rankClass = (i) => {
   color: #999;
 }
 
-.rank-gold { background: rgba(26,86,50,0.08); color: #1a5632; }
+.rank-gold { background: rgba(108,92,231,0.08); color: #6c5ce7; }
 .rank-silver { background: #e8e8e6; color: #666; }
 .rank-bronze { background: #ede8e0; color: #8a7a5a; }
 
@@ -369,7 +369,7 @@ const rankClass = (i) => {
 .rank-bar {
   display: block;
   height: 100%;
-  background: #1a5632;
+  background: #6c5ce7;
   border-radius: 2px;
   transition: width 600ms ease;
 }
