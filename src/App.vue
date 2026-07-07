@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- 粒子背景 -->
+    <canvas id="particle-canvas"></canvas>
+
     <!-- Header -->
     <header class="site-header">
       <div class="inner">
@@ -60,18 +63,110 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const scrolled = ref(false)
 const menuOpen = ref(false)
 
-const handleScroll = () => {
-  scrolled.value = window.scrollY > 20
+// 粒子动画
+let particles = []
+let animationId = null
+let mouseX = 0
+let mouseY = 0
+
+class Particle {
+  constructor(canvas) {
+    this.canvas = canvas
+    this.reset()
+  }
+
+  reset() {
+    this.x = Math.random() * this.canvas.width
+    this.y = Math.random() * this.canvas.height
+    this.size = Math.random() * 2 + 0.5
+    this.speedX = (Math.random() - 0.5) * 0.3
+    this.speedY = (Math.random() - 0.5) * 0.3
+    this.opacity = Math.random() * 0.4 + 0.1
+    this.hue = Math.random() < 0.5 ? 90 : 15 // sage green or clay
+  }
+
+  update() {
+    this.x += this.speedX
+    this.y += this.speedY
+
+    // Mouse interaction
+    const dx = mouseX - this.x
+    const dy = mouseY - this.y
+    const dist = Math.sqrt(dx * dx + dy * dy)
+    if (dist < 200) {
+      this.x -= dx * 0.002
+      this.y -= dy * 0.002
+    }
+
+    if (this.x < 0 || this.x > this.canvas.width ||
+        this.y < 0 || this.y > this.canvas.height) {
+      this.reset()
+    }
+  }
+
+  draw(ctx) {
+    ctx.beginPath()
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+    ctx.fillStyle = `hsla(${this.hue}, 30%, 60%, ${this.opacity})`
+    ctx.fill()
+  }
+}
+
+function initParticles(canvas) {
+  const count = Math.min(80, Math.floor(canvas.width * canvas.height / 15000))
+  particles = Array.from({ length: count }, () => new Particle(canvas))
+}
+
+function drawParticles(ctx, canvas) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  particles.forEach(p => { p.update(); p.draw(ctx) })
+
+  // Draw connections
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x
+      const dy = particles[i].y - particles[j].y
+      const dist = Math.sqrt(dx * dx + dy * dy)
+      if (dist < 120) {
+        ctx.beginPath()
+        ctx.moveTo(particles[i].x, particles[i].y)
+        ctx.lineTo(particles[j].x, particles[j].y)
+        ctx.strokeStyle = `rgba(180, 160, 140, ${0.08 * (1 - dist / 120)})`
+        ctx.lineWidth = 0.5
+        ctx.stroke()
+      }
+    }
+  }
+
+  animationId = requestAnimationFrame(() => drawParticles(ctx, canvas))
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  const canvas = document.getElementById('particle-canvas')
+  if (!canvas) return
+  const ctx = canvas.getContext('2d')
+
+  function resize() {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    particles = []
+    initParticles(canvas)
+  }
+
+  resize()
+  window.addEventListener('resize', resize)
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX
+    mouseY = e.clientY
+  })
+
+  drawParticles(ctx, canvas)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+  if (animationId) cancelAnimationFrame(animationId)
 })
 </script>

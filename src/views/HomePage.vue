@@ -23,16 +23,16 @@
       <div class="container">
         <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;">
           <div style="text-align:center;">
-            <div style="font-size:36px;font-weight:800;color:var(--jb-accent);">15+</div>
-            <div style="font-size:13px;color:var(--jb-text-light);margin-top:4px;">板块覆盖</div>
+            <div style="font-size:36px;font-weight:800;color:var(--accent);">15+</div>
+            <div style="font-size:13px;color:var(--text-light);margin-top:4px;">板块覆盖</div>
           </div>
           <div style="text-align:center;">
             <div style="font-size:36px;font-weight:800;color:#e53935;">101%</div>
-            <div style="font-size:13px;color:var(--jb-text-light);margin-top:4px;">最大个股涨幅</div>
+            <div style="font-size:13px;color:var(--text-light);margin-top:4px;">最大个股涨幅</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-size:36px;font-weight:800;color:var(--jb-accent);">5大</div>
-            <div style="font-size:13px;color:var(--jb-text-light);margin-top:4px;">评分维度</div>
+            <div style="font-size:36px;font-weight:800;color:var(--accent);">5大</div>
+            <div style="font-size:13px;color:var(--text-light);margin-top:4px;">评分维度</div>
           </div>
         </div>
       </div>
@@ -48,10 +48,10 @@
         </div>
         <div class="feature-grid fade-in" ref="aboutContent">
           <div class="feature-card" style="grid-column:1/-1;max-width:800px;margin:0 auto;text-align:center;">
-            <p style="font-size:15px;color:var(--jb-text-secondary);line-height:1.9;margin-bottom:16px;">
+            <p style="font-size:15px;color:var(--text-secondary);line-height:1.9;margin-bottom:16px;">
               东子证券是一家专注于证券市场研究与投资咨询的专业金融机构。我们拥有自主研发的板块评分体系，从板块指数涨幅、资金持续流入、趋势强度、人气热度、基本面五大维度，对A股各大板块进行全方位量化评分。
             </p>
-            <p style="font-size:15px;color:var(--jb-text-secondary);line-height:1.9;margin-bottom:16px;">
+            <p style="font-size:15px;color:var(--text-secondary);line-height:1.9;margin-bottom:16px;">
               同时，我们独创黑马板块与黑马个股挖掘模型，通过启动中/飙升中板块筛选、人气榜过滤、技术面突破确认等多重机制，精准锁定最具上涨潜力的投资标的。
             </p>
             <router-link to="/contact" class="btn btn-ghost" style="margin-top:8px;">
@@ -131,9 +131,9 @@
               <h3>📈 近期涨幅回顾</h3>
             </div>
             <div style="padding:16px 24px;">
-              <div v-for="(item, i) in gainReviews" :key="i" style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--jb-border-light);font-size:14px;">
+              <div v-for="(item, i) in gainReviews" :key="i" style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-light);font-size:14px;">
                 <span class="tag" :class="item.tagClass">{{ item.tag }}</span>
-                <span style="flex:1;color:var(--jb-text-secondary);">{{ item.desc }}</span>
+                <span style="flex:1;color:var(--text-secondary);">{{ item.desc }}</span>
                 <span style="font-weight:700;color:#e53935;">{{ item.gain }}</span>
               </div>
             </div>
@@ -178,9 +178,9 @@
               <h3>🚀 涨幅跟踪</h3>
             </div>
             <div style="padding:16px 24px;">
-              <div v-for="(item, i) in stockGains" :key="i" style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--jb-border-light);font-size:14px;">
+              <div v-for="(item, i) in stockGains" :key="i" style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-light);font-size:14px;">
                 <span class="tag tag-up">{{ item.tag }}</span>
-                <span style="flex:1;color:var(--jb-text-secondary);">{{ item.desc }}</span>
+                <span style="flex:1;color:var(--text-secondary);">{{ item.desc }}</span>
                 <span style="font-weight:700;color:#e53935;">+{{ item.gain }}%</span>
               </div>
             </div>
@@ -205,28 +205,28 @@
                 <div class="icon">📞</div>
                 <div>
                   <strong>服务热线</strong>
-                  <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:2px;">400-000-0000</p>
+                  <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">400-000-0000</p>
                 </div>
               </div>
               <div class="contact-info-item">
                 <div class="icon">📧</div>
                 <div>
                   <strong>电子邮箱</strong>
-                  <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:2px;">service@dongzisec.com</p>
+                  <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">service@dongzisec.com</p>
                 </div>
               </div>
               <div class="contact-info-item">
                 <div class="icon">📍</div>
                 <div>
                   <strong>公司地址</strong>
-                  <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:2px;">北京市朝阳区金融街88号</p>
+                  <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">北京市朝阳区金融街88号</p>
                 </div>
               </div>
               <div class="contact-info-item">
                 <div class="icon">🕐</div>
                 <div>
                   <strong>服务时间</strong>
-                  <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:2px;">工作日 9:00 - 18:00</p>
+                  <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">工作日 9:00 - 18:00</p>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@
               </form>
               <div v-if="submitted" style="margin-top:12px;padding:12px;background:#e8f5e9;border-radius:6px;text-align:center;">
                 <p style="color:#2e7d32;font-weight:600;">✓ 提交成功！</p>
-                <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:4px;">感谢您的咨询，我们将尽快与您联系！</p>
+                <p style="color:var(--text-secondary);font-size:13px;margin-top:4px;">感谢您的咨询，我们将尽快与您联系！</p>
               </div>
             </div>
           </div>

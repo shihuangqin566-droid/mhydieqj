@@ -17,29 +17,29 @@
                 <div class="icon">📞</div>
                 <div>
                   <strong>服务热线</strong>
-                  <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:2px;">400-000-0000</p>
-                  <p style="color:var(--jb-text-light);font-size:12px;">工作日 9:00 - 18:00</p>
+                  <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">400-000-0000</p>
+                  <p style="color:var(--text-light);font-size:12px;">工作日 9:00 - 18:00</p>
                 </div>
               </div>
               <div class="contact-info-item">
                 <div class="icon">📧</div>
                 <div>
                   <strong>电子邮箱</strong>
-                  <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:2px;">service@dongzisec.com</p>
+                  <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">service@dongzisec.com</p>
                 </div>
               </div>
               <div class="contact-info-item">
                 <div class="icon">📍</div>
                 <div>
                   <strong>公司地址</strong>
-                  <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:2px;">北京市朝阳区金融街88号</p>
+                  <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">北京市朝阳区金融街88号</p>
                 </div>
               </div>
               <div class="contact-info-item">
                 <div class="icon">💬</div>
                 <div>
                   <strong>微信公众号</strong>
-                  <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:2px;">东子证券（扫码关注获取最新研报）</p>
+                  <p style="color:var(--text-secondary);font-size:13px;margin-top:2px;">东子证券（扫码关注获取最新研报）</p>
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@
               </form>
               <div v-if="submitted" style="margin-top:12px;padding:12px;background:#e8f5e9;border-radius:6px;text-align:center;">
                 <p style="color:#2e7d32;font-weight:600;">✓ 提交成功！</p>
-                <p style="color:var(--jb-text-secondary);font-size:13px;margin-top:4px;">感谢您的咨询，我们的投研团队将在1个工作日内与您联系。</p>
+                <p style="color:var(--text-secondary);font-size:13px;margin-top:4px;">感谢您的咨询，我们的投研团队将在1个工作日内与您联系。</p>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@
 
         <div class="content-card fade-in" style="margin-top:24px;">
           <h3>📍 公司位置</h3>
-          <div style="background:var(--jb-bg-alt);border-radius:8px;padding:48px;text-align:center;color:var(--jb-text-light);">
+          <div style="background:var(--jb-bg-alt);border-radius:8px;padding:48px;text-align:center;color:var(--text-light);">
             <p style="font-size:16px;margin-bottom:8px;color:var(--jb-text);">北京市朝阳区金融街88号 · 东子证券大厦</p>
             <p style="font-size:14px;">地铁2号线金融街站A口出，步行500米即到</p>
           </div>

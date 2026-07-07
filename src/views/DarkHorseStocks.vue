@@ -11,8 +11,8 @@
       <div class="container">
         <div class="content-card fade-in">
           <h3>🔍 黑马个股筛选逻辑</h3>
-          <ol style="padding-left:20px;color:var(--jb-text-secondary);line-height:2.4;font-size:15px;">
-            <li>选取<strong style="color:var(--jb-accent);">启动中板块</strong>和<strong style="color:var(--jb-accent);">飙升中板块</strong>中的所有个股作为基础池</li>
+          <ol style="padding-left:20px;color:var(--text-secondary);line-height:2.4;font-size:15px;">
+            <li>选取<strong style="color:var(--accent);">启动中板块</strong>和<strong style="color:var(--accent);">飙升中板块</strong>中的所有个股作为基础池</li>
             <li>筛选位于东方财富、同花顺、雪球人气榜前100名的标的</li>
             <li>结合技术面（突破平台形态、均线多头排列）进行二次筛选</li>
             <li>综合评估最新一波行情阶段涨幅，确定最具上涨潜力的黑马个股</li>
@@ -21,7 +21,7 @@
 
         <div class="content-card fade-in">
           <h3>🎯 最具上涨潜力黑马个股</h3>
-          <p style="color:var(--jb-text-secondary);margin-bottom:16px;">出品人：东子证券 ｜ 日期：2026年6月29日</p>
+          <p style="color:var(--text-secondary);margin-bottom:16px;">出品人：东子证券 ｜ 日期：2026年6月29日</p>
           <table class="data-table">
             <thead>
               <tr>
@@ -34,7 +34,7 @@
             </thead>
             <tbody>
               <tr v-for="(item, i) in topPotential" :key="i">
-                <td style="color:var(--jb-text-light);">{{ item.code }}</td>
+                <td style="color:var(--text-light);">{{ item.code }}</td>
                 <td><strong>{{ item.name }}</strong></td>
                 <td>{{ item.sector }}</td>
                 <td>

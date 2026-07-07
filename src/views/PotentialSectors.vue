@@ -11,7 +11,7 @@
       <div class="container">
         <div class="content-card fade-in">
           <h3>📐 评分标准说明</h3>
-          <p style="color:var(--jb-text-secondary);margin-bottom:20px;">
+          <p style="color:var(--text-secondary);margin-bottom:20px;">
             东子证券潜力板块评分体系由五大维度组成，总分100分，从技术面、资金面、人气面、基本面全面评估板块潜力。
           </p>
           <div class="score-method">
@@ -25,7 +25,7 @@
 
         <div class="content-card fade-in">
           <h3>📊 2026年7月6日 · 潜力板块得分榜</h3>
-          <p style="color:var(--jb-text-secondary);margin-bottom:16px;">出品人：东子证券</p>
+          <p style="color:var(--text-secondary);margin-bottom:16px;">出品人：东子证券</p>
           <table class="data-table">
             <thead>
               <tr>
@@ -46,7 +46,7 @@
 
         <div class="content-card fade-in">
           <h3>📅 2026年6月29日 · 历史得分榜</h3>
-          <p style="color:var(--jb-text-secondary);margin-bottom:16px;">出品人：东子证券</p>
+          <p style="color:var(--text-secondary);margin-bottom:16px;">出品人：东子证券</p>
           <table class="data-table">
             <thead>
               <tr>
