@@ -2,7 +2,7 @@
   <div class="contact-page">
     <section class="page-banner">
       <div class="container">
-        <div class="hero-tag" style="display:inline-flex;align-items:center;gap:8px;padding:6px 20px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:9999px;font-size:13px;color:var(--gold-400);margin-bottom:20px;">
+        <div class="hero-tag" style="display:inline-flex;align-items:center;gap:8px;padding:6px 20px;background:rgba(255,0,128,0.08);border:1px solid rgba(255,0,128,0.2);border-radius:9999px;font-size:13px;color:var(--neon-400);margin-bottom:20px;">
           联系我们
         </div>
         <h1>联系我们</h1>

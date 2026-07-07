@@ -114,7 +114,7 @@
         </div>
         <div class="home-card fade-in" ref="potentialTable">
           <h3>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff0080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
             板块得分 Top 3
           </h3>
           <table class="data-table">

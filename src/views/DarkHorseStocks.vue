@@ -2,7 +2,7 @@
   <div class="darkhorse-stocks-page">
     <section class="page-banner">
       <div class="container">
-        <div class="hero-tag" style="display:inline-flex;align-items:center;gap:8px;padding:6px 20px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:9999px;font-size:13px;color:var(--gold-400);margin-bottom:20px;">
+        <div class="hero-tag" style="display:inline-flex;align-items:center;gap:8px;padding:6px 20px;background:rgba(255,0,128,0.08);border:1px solid rgba(255,0,128,0.2);border-radius:9999px;font-size:13px;color:var(--neon-400);margin-bottom:20px;">
           个股研究
         </div>
         <h1>黑马个股研究</h1>
@@ -15,7 +15,7 @@
         <div class="content-card fade-in">
           <h3>🔍 黑马个股筛选逻辑</h3>
           <ol style="padding-left:20px;color:var(--gray-300);line-height:2.4;font-size:15px;">
-            <li>选取<strong style="color:var(--gold-400);">启动中板块</strong>和<strong style="color:var(--gold-400);">飙升中板块</strong>中的所有个股作为基础池</li>
+            <li>选取<strong style="color:var(--neon-400);">启动中板块</strong>和<strong style="color:var(--neon-400);">飙升中板块</strong>中的所有个股作为基础池</li>
             <li>筛选位于东方财富、同花顺、雪球人气榜前100名的标的</li>
             <li>结合技术面（突破平台形态、均线多头排列）进行二次筛选</li>
             <li>综合评估最新一波行情阶段涨幅，确定最具上涨潜力的黑马个股</li>

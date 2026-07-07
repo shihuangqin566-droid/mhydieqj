@@ -49,8 +49,8 @@ const defaultData = [
 .market-ticker {
   width: 100%;
   overflow: hidden;
-  background: rgba(10, 22, 40, 0.9);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(10, 0, 21, 0.95);
+  border-bottom: 1px solid rgba(255, 0, 128, 0.08);
   padding: 8px 0;
   position: relative;
 }

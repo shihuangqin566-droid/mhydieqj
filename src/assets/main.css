@@ -6,67 +6,79 @@
 /* ---------- 字体引入 ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-/* ---------- CSS 变量 ---------- */
+/* ---------- CSS 变量 — 赛博朋克风格 ---------- */
 :root {
-  /* 主色调 — 深蓝金 */
-  --primary-900: #0a1628;
-  --primary-800: #0f1f3a;
-  --primary-700: #15294d;
-  --primary-600: #1a3560;
-  --primary-500: #1f4280;
-  --primary-400: #2a5aaa;
-  --primary-300: #4a7fd4;
-  --primary-200: #7aa8e8;
-  --primary-100: #b8d4f5;
+  /* 主色调 — 暗紫/品红/霓虹青 */
+  --primary-900: #0a0015;
+  --primary-800: #120026;
+  --primary-700: #1a0038;
+  --primary-600: #24004d;
+  --primary-500: #3b0066;
+  --primary-400: #5c0099;
+  --primary-300: #7c2dff;
+  --primary-200: #a66aff;
+  --primary-100: #cca6ff;
 
-  /* 金色强调色 */
-  --gold-600: #8a6d1b;
-  --gold-500: #c9a84c;
-  --gold-400: #dbb95a;
-  --gold-300: #e8cc6e;
-  --gold-200: #f0d98a;
-  --gold-100: #f7eabc;
+  /* 霓虹粉 — 替代旧金色 */
+  --neon-600: #b8005c;
+  --neon-500: #ff0080;
+  --neon-400: #ff3399;
+  --neon-300: #ff66b2;
+  --neon-200: #ff99cc;
+  --neon-100: #ffcce6;
+
+  /* 霓虹青 */
+  --cyan-600: #008080;
+  --cyan-500: #00e5ff;
+  --cyan-400: #33ebff;
+  --cyan-300: #66f0ff;
+  --cyan-200: #99f5ff;
+  --cyan-100: #ccfaff;
 
   /* 语义色 */
-  --red-500: #ef4444;
-  --red-400: #f87171;
-  --green-500: #22c55e;
-  --green-400: #4ade80;
-  --blue-400: #60a5fa;
-  --orange-400: #fb923c;
-  --purple-400: #a78bfa;
+  --red-500: #ff1744;
+  --red-400: #ff5252;
+  --green-500: #00e676;
+  --green-400: #69f0ae;
+  --blue-400: #448aff;
+  --orange-400: #ff9100;
+  --purple-400: #d500f9;
 
   /* 中性色 */
   --white: #ffffff;
-  --gray-50: #f8fafc;
-  --gray-100: #f1f5f9;
-  --gray-200: #e2e8f0;
-  --gray-300: #cbd5e1;
-  --gray-400: #94a3b8;
-  --gray-500: #64748b;
-  --gray-600: #475569;
-  --gray-700: #334155;
-  --gray-800: #1e293b;
-  --gray-900: #0f172a;
+  --gray-50: #eceff1;
+  --gray-100: #cfd8dc;
+  --gray-200: #b0bec5;
+  --gray-300: #90a4ae;
+  --gray-400: #78909c;
+  --gray-500: #607d8b;
+  --gray-600: #546e7a;
+  --gray-700: #455a64;
+  --gray-800: #37474f;
+  --gray-900: #263238;
 
   /* 背景 */
   --bg-body: var(--primary-900);
-  --bg-card: rgba(30, 41, 59, 0.7);
-  --bg-card-hover: rgba(30, 41, 59, 0.9);
-  --bg-section: rgba(15, 23, 42, 0.6);
-  --bg-section-alt: rgba(26, 53, 96, 0.15);
+  --bg-card: rgba(18, 0, 38, 0.7);
+  --bg-card-hover: rgba(18, 0, 38, 0.9);
+  --bg-section: rgba(10, 0, 21, 0.6);
+  --bg-section-alt: rgba(92, 0, 153, 0.08);
 
   /* 玻璃态 */
-  --glass-bg: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 0, 128, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   --glass-blur: blur(16px);
 
+  /* 霓虹发光 */
+  --glow-neon: 0 0 20px rgba(255, 0, 128, 0.15), 0 0 40px rgba(255, 0, 128, 0.05);
+  --glow-cyan: 0 0 20px rgba(0, 229, 255, 0.15), 0 0 40px rgba(0, 229, 255, 0.05);
+  --glow-purple: 0 0 20px rgba(124, 45, 255, 0.15), 0 0 40px rgba(124, 45, 255, 0.05);
+
   /* 阴影 */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 30px rgba(201, 168, 76, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
 
   /* 圆角 */
   --radius-sm: 8px;
@@ -173,12 +185,12 @@ img { max-width: 100%; display: block; }
 .section-header .label {
   display: inline-block;
   padding: 4px 16px;
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.05));
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(255, 0, 128, 0.05));
+  border: 1px solid rgba(255, 0, 128, 0.2);
   border-radius: var(--radius-full);
   font-size: 12px;
   font-weight: 600;
-  color: var(--gold-400);
+  color: var(--neon-400);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -206,7 +218,7 @@ img { max-width: 100%; display: block; }
 .section-header .accent-line {
   width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+  background: linear-gradient(90deg, var(--neon-500), var(--neon-300));
   margin: 20px auto 0;
   border-radius: 2px;
   position: relative;
@@ -324,36 +336,37 @@ img { max-width: 100%; display: block; }
 .btn:hover::after { opacity: 1; }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
-  color: var(--primary-900);
-  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+  background: linear-gradient(135deg, var(--neon-500), var(--neon-400));
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(255, 0, 128, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4);
+  box-shadow: 0 8px 30px rgba(255, 0, 128, 0.4);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--gold-400);
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--neon-400);
+  border: 1px solid rgba(255, 0, 128, 0.3);
 }
 
 .btn-outline:hover {
-  background: rgba(201, 168, 76, 0.1);
-  border-color: var(--gold-400);
+  background: rgba(255, 0, 128, 0.1);
+  border-color: var(--neon-400);
   transform: translateY(-2px);
 }
 
 .btn-ghost {
-  background: rgba(255,255,255,0.05);
-  color: var(--gray-200);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0, 229, 255, 0.05);
+  color: var(--cyan-400);
+  border: 1px solid rgba(0, 229, 255, 0.15);
 }
 
 .btn-ghost:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(0, 229, 255, 0.1);
+  box-shadow: var(--glow-cyan);
   transform: translateY(-2px);
 }
 
@@ -368,27 +381,27 @@ img { max-width: 100%; display: block; }
 }
 
 .tag-hot {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  background: linear-gradient(135deg, rgba(255, 23, 68, 0.15), rgba(255, 23, 68, 0.05));
   color: var(--red-400);
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(255, 23, 68, 0.2);
 }
 
 .tag-new {
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.05));
-  color: var(--blue-400);
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(0, 229, 255, 0.05));
+  color: var(--cyan-400);
+  border: 1px solid rgba(0, 229, 255, 0.2);
 }
 
 .tag-up {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05));
+  background: linear-gradient(135deg, rgba(0, 230, 118, 0.15), rgba(0, 230, 118, 0.05));
   color: var(--green-400);
-  border: 1px solid rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(0, 230, 118, 0.2);
 }
 
 .tag-primary {
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.05));
-  color: var(--gold-400);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(255, 0, 128, 0.05));
+  color: var(--neon-400);
+  border: 1px solid rgba(255, 0, 128, 0.2);
 }
 
 /* ---------- 排名徽章 ---------- */
@@ -404,21 +417,21 @@ img { max-width: 100%; display: block; }
 }
 
 .rank-badge.gold {
-  background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
-  color: var(--primary-900);
-  box-shadow: 0 2px 10px rgba(201, 168, 76, 0.3);
+  background: linear-gradient(135deg, var(--neon-500), var(--neon-400));
+  color: var(--white);
+  box-shadow: 0 2px 10px rgba(255, 0, 128, 0.3);
 }
 
 .rank-badge.silver {
-  background: linear-gradient(135deg, #94a3b8, #cbd5e1);
-  color: var(--primary-900);
-  box-shadow: 0 2px 10px rgba(148, 163, 184, 0.3);
+  background: linear-gradient(135deg, #546e7a, #90a4ae);
+  color: var(--white);
+  box-shadow: 0 2px 10px rgba(84, 110, 122, 0.3);
 }
 
 .rank-badge.bronze {
-  background: linear-gradient(135deg, #cd7f32, #d4956a);
-  color: var(--primary-900);
-  box-shadow: 0 2px 10px rgba(205, 127, 50, 0.3);
+  background: linear-gradient(135deg, #bf360c, #ff5722);
+  color: var(--white);
+  box-shadow: 0 2px 10px rgba(191, 54, 12, 0.3);
 }
 
 .rank-badge.default {
@@ -427,8 +440,8 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- 涨幅颜色 ---------- */
-.up-red { color: var(--red-400); font-weight: 700; }
-.up-green { color: var(--green-400); font-weight: 700; }
+.up-red { color: var(--red-400); font-weight: 700; text-shadow: 0 0 10px rgba(255, 82, 82, 0.3); }
+.up-green { color: var(--green-400); font-weight: 700; text-shadow: 0 0 10px rgba(105, 240, 174, 0.3); }
 
 /* ============================================================
    导航栏
@@ -439,16 +452,16 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(10, 22, 40, 0.8);
+  background: rgba(10, 0, 21, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 0, 128, 0.1);
   transition: all var(--transition-base);
 }
 
 .navbar.scrolled {
-  background: rgba(10, 22, 40, 0.95);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(10, 0, 21, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), var(--glow-neon);
 }
 
 .navbar .container {
@@ -471,15 +484,15 @@ img { max-width: 100%; display: block; }
 .navbar .logo-icon {
   width: 38px;
   height: 38px;
-  background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+  background: linear-gradient(135deg, var(--neon-500), var(--neon-400));
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-weight: 900;
-  color: var(--primary-900);
-  box-shadow: 0 2px 12px rgba(201, 168, 76, 0.3);
+  color: var(--white);
+  box-shadow: var(--glow-neon);
 }
 
 .navbar .nav-links {
@@ -504,8 +517,8 @@ img { max-width: 100%; display: block; }
 }
 
 .navbar .nav-links a.router-link-active {
-  color: var(--gold-400);
-  background: rgba(201, 168, 76, 0.08);
+  color: var(--neon-400);
+  background: rgba(255, 0, 128, 0.08);
 }
 
 .navbar .menu-toggle {
@@ -558,7 +571,7 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 128, 0.3), transparent);
 }
 
 .footer .container {
@@ -583,7 +596,7 @@ img { max-width: 100%; display: block; }
   transition: color var(--transition-fast);
 }
 
-.footer a:hover { color: var(--gold-400); }
+.footer a:hover { color: var(--neon-400); }
 
 .footer .footer-logo {
   display: flex;
@@ -598,13 +611,13 @@ img { max-width: 100%; display: block; }
 .footer .footer-logo span {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+  background: linear-gradient(135deg, var(--neon-500), var(--neon-400));
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  color: var(--primary-900);
+  color: var(--white);
 }
 
 .footer .footer-bottom {
@@ -636,15 +649,15 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 
-/* 动态粒子背景 */
+/* 动态粒子背景 — 赛博朋克 */
 .hero-banner::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(42, 90, 170, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(74, 127, 212, 0.04) 0%, transparent 60%);
+    radial-gradient(circle at 20% 30%, rgba(92, 0, 153, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.04) 0%, transparent 60%);
   animation: heroPulse 8s ease-in-out infinite alternate;
 }
 
@@ -681,7 +694,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(201, 168, 76, 0.2);
   border-radius: var(--radius-full);
   font-size: 13px;
-  color: var(--gold-400);
+  color: var(--neon-400);
   margin-bottom: 24px;
   animation: fadeInUp 0.8s ease-out;
 }
@@ -708,12 +721,13 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-banner h1 .gradient-text {
-  background: linear-gradient(135deg, var(--gold-500), var(--gold-300), var(--gold-500));
+  background: linear-gradient(135deg, var(--neon-500), var(--cyan-400), var(--neon-500));
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientShift 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 128, 0.3));
 }
 
 @keyframes gradientShift {
@@ -766,7 +780,7 @@ img { max-width: 100%; display: block; }
 .hero-stat-item .number {
   font-size: 40px;
   font-weight: 900;
-  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  background: linear-gradient(135deg, var(--neon-500), var(--neon-300));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -854,14 +868,14 @@ img { max-width: 100%; display: block; }
 }
 
 .home-card .card-more a {
-  color: var(--gold-400);
+  color: var(--neon-400);
   font-size: 14px;
   font-weight: 500;
   transition: all var(--transition-fast);
 }
 
 .home-card .card-more a:hover {
-  color: var(--gold-300);
+  color: var(--neon-300);
   gap: 6px;
 }
 
@@ -904,8 +918,8 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 30% 40%, rgba(42, 90, 170, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 70% 60%, rgba(201, 168, 76, 0.06) 0%, transparent 50%);
+    radial-gradient(circle at 30% 40%, rgba(92, 0, 153, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(255, 0, 128, 0.08) 0%, transparent 50%);
 }
 
 .page-banner::after {
@@ -999,7 +1013,7 @@ img { max-width: 100%; display: block; }
 .score-item .score-value {
   font-size: 28px;
   font-weight: 900;
-  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  background: linear-gradient(135deg, var(--cyan-500), var(--cyan-300));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1053,14 +1067,14 @@ img { max-width: 100%; display: block; }
 .contact-info-item .icon {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, var(--primary-500), var(--primary-400));
+  background: linear-gradient(135deg, var(--primary-500), var(--neon-500));
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(42, 90, 170, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 0, 128, 0.2);
 }
 
 .contact-form input,
@@ -1080,9 +1094,9 @@ img { max-width: 100%; display: block; }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--gold-500);
+  border-color: var(--neon-500);
   background: rgba(255,255,255,0.06);
-  box-shadow: 0 0 20px rgba(201, 168, 76, 0.05);
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.05);
 }
 
 .contact-form input::placeholder,
@@ -1203,13 +1217,14 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 8px;
   padding: 6px 20px;
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  background: rgba(255, 0, 128, 0.08);
+  border: 1px solid rgba(255, 0, 128, 0.2);
   border-radius: var(--radius-full);
   font-size: 13px;
-  color: var(--gold-400);
+  color: var(--neon-400);
   margin-bottom: 24px;
   animation: fadeInUp 0.8s ease-out;
+  box-shadow: var(--glow-neon);
 }
 
 .hero-badge .live-dot {
@@ -1225,10 +1240,11 @@ img { max-width: 100%; display: block; }
   display: inline-block;
   width: 3px;
   height: 1em;
-  background: var(--gold-400);
+  background: var(--cyan-400);
   margin-left: 4px;
   animation: blink 1s step-end infinite;
   vertical-align: text-top;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 
 @keyframes blink {
@@ -1267,14 +1283,15 @@ img { max-width: 100%; display: block; }
   font-size: 28px;
   font-weight: 900;
   font-family: 'JetBrains Mono', monospace;
-  background: linear-gradient(135deg, var(--white), var(--gray-200));
+  background: linear-gradient(135deg, var(--cyan-400), var(--neon-400));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.2));
 }
 
 .metric-value.up {
-  background: linear-gradient(135deg, var(--red-400), #fca5a5);
+  background: linear-gradient(135deg, var(--red-400), var(--neon-400));
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -1306,11 +1323,11 @@ img { max-width: 100%; display: block; }
 }
 
 .chart-card {
-  background: rgba(10, 22, 40, 0.6);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(10, 0, 21, 0.6);
+  border: 1px solid rgba(255, 0, 128, 0.1);
   border-radius: var(--radius-lg);
   padding: 20px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), var(--glow-neon);
 }
 
 .chart-card-header {

@@ -14,7 +14,7 @@ const props = defineProps({
   labels: { type: Array, default: () => [] },
   values: { type: Array, default: () => [] },
   label: { type: String, default: '评分' },
-  color: { type: String, default: '#c9a84c' },
+  color: { type: String, default: '#ff0080' },
 })
 
 const canvasRef = ref(null)
