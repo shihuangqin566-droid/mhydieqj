@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <!-- 粒子背景 -->
-    <canvas id="particle-canvas"></canvas>
-
     <!-- Header -->
     <header class="site-header">
       <div class="inner">
@@ -144,8 +141,10 @@ function drawParticles(ctx, canvas) {
 }
 
 onMounted(() => {
-  const canvas = document.getElementById('particle-canvas')
-  if (!canvas) return
+  // 创建粒子画布
+  const canvas = document.createElement('canvas')
+  canvas.id = 'particle-canvas'
+  document.body.prepend(canvas)
   const ctx = canvas.getContext('2d')
 
   function resize() {
