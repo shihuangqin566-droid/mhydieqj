@@ -1,26 +1,39 @@
 /* ============================================================
-   东子证券 — Awwwards 风格
-   灵感来源：Winden Business Banking
-   暗色极简 · 渐变背景 · 大标题 · 微交互
+   东子证券 — Winden 风格
+   暗色 Hero + 浅灰卡片区 + 白色卡片
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
+  /* 暗色系 */
   --bg-dark: #0a0b0e;
-  --bg-card: rgba(255,255,255,0.04);
-  --bg-card-hover: rgba(255,255,255,0.07);
-  --bg-elevated: rgba(255,255,255,0.06);
+  --bg-card-dark: rgba(255,255,255,0.04);
   --text-primary: #ffffff;
   --text-secondary: rgba(255,255,255,0.6);
   --text-muted: rgba(255,255,255,0.35);
+
+  /* 浅色系 — Winden 的 #f8f9fb */
+  --bg-light: #f8f9fb;
+  --bg-white: #ffffff;
+  --text-dark: #1a1a2e;
+  --text-dark-secondary: #555770;
+  --text-dark-muted: #8e90a6;
+
+  /* 紫色强调 */
   --accent: #6c5ce7;
   --accent-hover: #7c6ff0;
   --accent-glow: rgba(108,92,231,0.2);
-  --border: rgba(255,255,255,0.06);
-  --border-light: rgba(255,255,255,0.04);
+  --accent-light: rgba(108,92,231,0.06);
+
+  /* 边框 */
+  --border-dark: rgba(255,255,255,0.06);
+  --border-light: #e8e8ee;
+
+  /* 圆角 */
   --radius: 12px;
   --radius-lg: 20px;
+
   --max-width: 1200px;
   --font: 'Inter', -apple-system, sans-serif;
   --font-cn: 'Noto Sans SC', 'PingFang SC', sans-serif;
@@ -32,24 +45,11 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-cn);
-  color: var(--text-primary);
-  background: var(--bg-dark);
+  color: var(--text-dark);
+  background: var(--bg-light);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-}
-
-/* 渐变背景 */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(108,92,231,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(108,92,231,0.04) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 30% at 20% 60%, rgba(0,0,0,0.2) 0%, transparent 50%);
-  pointer-events: none;
 }
 
 a { text-decoration: none; color: inherit; transition: color var(--transition); }
@@ -63,7 +63,7 @@ img { max-width: 100%; }
 }
 
 /* ============================================================
-   Header — 透明毛玻璃
+   Header — 暗色透明
    ============================================================ */
 .site-header {
   position: fixed;
@@ -71,10 +71,10 @@ img { max-width: 100%; }
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(10, 11, 14, 0.8);
+  background: rgba(10, 11, 14, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-dark);
 }
 
 .site-header .inner {
@@ -125,7 +125,7 @@ img { max-width: 100%; }
   transition: all var(--transition);
 }
 
-.site-header .nav-links a:hover { color: var(--text-primary); background: var(--bg-elevated); }
+.site-header .nav-links a:hover { color: var(--text-primary); background: var(--bg-card-dark); }
 .site-header .nav-links a.router-link-active { color: var(--accent); background: var(--accent-glow); }
 
 .site-header .menu-toggle {
@@ -149,7 +149,7 @@ img { max-width: 100%; }
     flex-direction: column;
     padding: 12px 24px;
     gap: 2px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-dark);
   }
   .site-header .nav-links.open { display: flex; }
   .site-header .nav-links a { padding: 12px 0; width: 100%; font-size: 15px; }
@@ -157,13 +157,25 @@ img { max-width: 100%; }
 }
 
 /* ============================================================
-   Hero — 大标题 + 重叠文字
+   Hero — 暗色区
    ============================================================ */
 .hero {
-  padding: 160px 0 80px;
+  padding: 160px 0 100px;
   position: relative;
   text-align: center;
   overflow: hidden;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(108,92,231,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(108,92,231,0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .hero-badge {
@@ -178,6 +190,7 @@ img { max-width: 100%; }
   font-weight: 500;
   color: var(--accent);
   margin-bottom: 32px;
+  position: relative;
 }
 
 .hero h1 {
@@ -186,6 +199,7 @@ img { max-width: 100%; }
   line-height: 1.05;
   letter-spacing: -2px;
   margin-bottom: 8px;
+  position: relative;
 }
 
 .hero h1 .accent {
@@ -200,6 +214,7 @@ img { max-width: 100%; }
   color: var(--text-secondary);
   font-weight: 400;
   margin-bottom: 6px;
+  position: relative;
 }
 
 .hero .subtitle {
@@ -208,6 +223,7 @@ img { max-width: 100%; }
   max-width: 480px;
   margin: 0 auto 40px;
   line-height: 1.7;
+  position: relative;
 }
 
 .hero-actions {
@@ -215,6 +231,33 @@ img { max-width: 100%; }
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
+  position: relative;
+}
+
+/* Stats — 暗色区底部 */
+.stats-row {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  padding: 0 0 80px;
+  background: var(--bg-dark);
+}
+
+.stat-item { text-align: center; }
+
+.stat-item .number {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -2px;
+}
+
+.stat-item .label {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 /* ============================================================
@@ -243,32 +286,32 @@ img { max-width: 100%; }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
 
 .btn-secondary {
-  background: var(--bg-elevated);
+  background: rgba(255,255,255,0.06);
   color: var(--text-primary);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-dark);
 }
 
-.btn-secondary:hover { background: var(--bg-card-hover); transform: translateY(-2px); }
+.btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 
 .btn-ghost {
   background: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
+  color: var(--text-dark-secondary);
+  border: 1px solid var(--border-light);
 }
 
-.btn-ghost:hover { border-color: rgba(255,255,255,0.15); color: var(--text-primary); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ============================================================
-   Sections
+   Sections — 浅色区
    ============================================================ */
 .section {
   padding: 100px 0;
 }
 
 .section-alt {
-  background: rgba(255,255,255,0.02);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .section-header {
@@ -292,31 +335,30 @@ img { max-width: 100%; }
   margin-bottom: 12px;
   letter-spacing: -1px;
   line-height: 1.15;
+  color: var(--text-dark);
 }
 
 .section-header .subtitle {
   font-size: 17px;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary);
   max-width: 480px;
   margin: 0 auto;
 }
 
 /* ============================================================
-   Glass Cards
+   Cards — Winden 浅灰卡片
    ============================================================ */
 .glass-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 40px;
   transition: all var(--transition);
 }
 
 .glass-card:hover {
-  background: var(--bg-card-hover);
-  border-color: rgba(255,255,255,0.08);
-  transform: translateY(-4px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  border-color: #ddd;
 }
 
 .feature-grid {
@@ -326,30 +368,30 @@ img { max-width: 100%; }
 }
 
 /* ============================================================
-   Tables
+   Tables — 浅色
    ============================================================ */
 .table-wrap {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all var(--transition);
 }
 
-.table-wrap:hover { border-color: rgba(255,255,255,0.08); }
+.table-wrap:hover { border-color: #ddd; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
 
 .table-wrap .table-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px 28px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .table-wrap .table-header h3 {
   font-size: 17px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-dark);
 }
 
 .table-wrap .table-header .more-link {
@@ -359,7 +401,7 @@ img { max-width: 100%; }
   transition: color var(--transition);
 }
 
-.table-wrap .table-header .more-link:hover { color: #a78bfa; }
+.table-wrap .table-header .more-link:hover { color: #5a4bd1; }
 
 .data-table {
   width: 100%;
@@ -371,23 +413,23 @@ img { max-width: 100%; }
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: rgba(255,255,255,0.02);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .data-table td {
   padding: 16px 28px;
   text-align: center;
   font-size: 14px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-dark-secondary);
 }
 
 .data-table tr:last-child td { border-bottom: none; }
-.data-table tr:hover td { background: rgba(255,255,255,0.02); }
+.data-table tr:hover td { background: var(--bg-light); }
 
 .rank-badge {
   display: inline-flex;
@@ -400,13 +442,13 @@ img { max-width: 100%; }
   font-weight: 600;
 }
 
-.rank-badge.gold { background: linear-gradient(135deg, rgba(108,92,231,0.2), rgba(167,139,250,0.1)); color: var(--accent); }
-.rank-badge.silver { background: rgba(255,255,255,0.05); color: var(--text-secondary); }
-.rank-badge.bronze { background: rgba(255,255,255,0.03); color: var(--text-muted); }
-.rank-badge.default { background: rgba(255,255,255,0.02); color: var(--text-muted); }
+.rank-badge.gold { background: linear-gradient(135deg, var(--accent-light), rgba(108,92,231,0.02)); color: var(--accent); }
+.rank-badge.silver { background: var(--bg-light); color: var(--text-dark-secondary); }
+.rank-badge.bronze { background: var(--bg-light); color: var(--text-dark-muted); }
+.rank-badge.default { background: var(--bg-light); color: var(--text-dark-muted); }
 
-.up-red { color: #f87171; font-weight: 600; }
-.up-green { color: #4ade80; font-weight: 600; }
+.up-red { color: #e74c3c; font-weight: 600; }
+.up-green { color: #27ae60; font-weight: 600; }
 
 .tag {
   display: inline-block;
@@ -416,52 +458,20 @@ img { max-width: 100%; }
   font-weight: 600;
 }
 
-.tag-hot { background: rgba(248,113,113,0.1); color: #f87171; }
-.tag-new { background: rgba(96,165,250,0.1); color: #60a5fa; }
-.tag-up { background: rgba(74,222,128,0.1); color: #4ade80; }
-.tag-primary { background: var(--accent-glow); color: var(--accent); }
+.tag-hot { background: #fdf0ed; color: #c0392b; }
+.tag-new { background: #eaf0fa; color: #2980b9; }
+.tag-up { background: #e8f5e9; color: #27ae60; }
+.tag-primary { background: var(--accent-light); color: var(--accent); }
 
 /* ============================================================
-   Stats
-   ============================================================ */
-.stats-row {
-  display: flex;
-  gap: 48px;
-  justify-content: center;
-  padding: 0;
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-item .number {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1;
-  margin-bottom: 8px;
-  letter-spacing: -2px;
-}
-
-.stat-item .label {
-  font-size: 14px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-@media (max-width: 768px) {
-  .stats-row { gap: 32px; flex-wrap: wrap; }
-  .stat-item .number { font-size: 36px; }
-}
-
-/* ============================================================
-   Page Banner
+   Page Banner — 暗色
    ============================================================ */
 .page-banner {
   padding: 140px 0 60px;
   text-align: center;
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-dark);
 }
 
 .page-banner h1 {
@@ -482,23 +492,23 @@ img { max-width: 100%; }
 .page-content { padding: 60px 0; }
 
 .content-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 40px;
   margin-bottom: 24px;
   transition: all var(--transition);
 }
 
-.content-card:hover { border-color: rgba(255,255,255,0.08); }
+.content-card:hover { border-color: #ddd; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
 
 .content-card h3 {
   font-size: 18px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-dark);
   margin-bottom: 20px;
   padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-light);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -515,14 +525,14 @@ img { max-width: 100%; }
 }
 
 .score-item {
-  background: var(--bg-elevated);
+  background: var(--bg-light);
   border-radius: var(--radius);
   padding: 24px 16px;
   text-align: center;
   transition: all var(--transition);
 }
 
-.score-item:hover { background: var(--bg-card-hover); }
+.score-item:hover { background: #f0f1f5; }
 
 .score-item .score-value {
   font-size: 28px;
@@ -532,14 +542,14 @@ img { max-width: 100%; }
 
 .score-item .score-name {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: var(--text-dark);
   margin: 8px 0 4px;
   font-weight: 600;
 }
 
 .score-item .score-desc {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
 }
 
 /* ============================================================
@@ -555,7 +565,7 @@ img { max-width: 100%; }
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 24px;
-  color: var(--text-primary);
+  color: var(--text-dark);
 }
 
 .contact-info-item {
@@ -564,17 +574,17 @@ img { max-width: 100%; }
   gap: 14px;
   margin-bottom: 14px;
   padding: 16px;
-  background: var(--bg-elevated);
+  background: var(--bg-light);
   border-radius: var(--radius);
   transition: all var(--transition);
 }
 
-.contact-info-item:hover { background: var(--bg-card-hover); }
+.contact-info-item:hover { background: #f0f1f5; }
 
 .contact-info-item .icon {
   width: 42px;
   height: 42px;
-  background: var(--accent-glow);
+  background: var(--accent-light);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -587,12 +597,12 @@ img { max-width: 100%; }
 .contact-form textarea {
   width: 100%;
   padding: 12px 16px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius);
   font-size: 14px;
   font-family: inherit;
-  color: var(--text-primary);
+  color: var(--text-dark);
   transition: all var(--transition);
   margin-bottom: 14px;
   outline: none;
@@ -601,11 +611,11 @@ img { max-width: 100%; }
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .contact-form input::placeholder,
-.contact-form textarea::placeholder { color: var(--text-muted); }
+.contact-form textarea::placeholder { color: var(--text-dark-muted); }
 
 .contact-form textarea { height: 100px; resize: vertical; }
 
@@ -614,11 +624,12 @@ img { max-width: 100%; }
 }
 
 /* ============================================================
-   Footer
+   Footer — 暗色
    ============================================================ */
 .site-footer {
-  background: rgba(0,0,0,0.3);
-  border-top: 1px solid var(--border);
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-dark);
   padding: 60px 0 40px;
 }
 
@@ -675,7 +686,7 @@ img { max-width: 100%; }
   text-align: center;
   padding-top: 28px;
   margin-top: 28px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-dark);
   font-size: 13px;
   color: var(--text-muted);
 }
@@ -698,6 +709,8 @@ img { max-width: 100%; }
 @media (max-width: 480px) {
   .hero h1 { font-size: 36px; }
   .hero { padding: 120px 0 60px; }
+  .stats-row { gap: 32px; flex-wrap: wrap; }
+  .stat-item .number { font-size: 36px; }
   .section { padding: 60px 0; }
   .section-header h2 { font-size: 28px; }
   .page-banner h1 { font-size: 30px; }
