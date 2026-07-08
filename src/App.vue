@@ -19,7 +19,7 @@
 
     <main>
       <transition name="page" mode="out-in">
-        <router-view />
+        <router-view :key="route.fullPath" />
       </transition>
     </main>
 
@@ -58,17 +58,42 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 const menuOpen = ref(false)
 const scrolled = ref(false)
+const route = useRoute()
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 20
 }
 
+const revealPage = () => {
+  const items = Array.from(document.querySelectorAll('.fade-in'))
+    .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)
+
+  items.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 90}ms`
+    el.classList.remove('visible')
+  })
+
+  requestAnimationFrame(() => {
+    items.forEach(el => el.classList.add('visible'))
+  })
+}
+
+watch(
+  () => route.fullPath,
+  async () => {
+    await nextTick()
+    revealPage()
+  }
+)
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  revealPage()
 })
 
 onUnmounted(() => {

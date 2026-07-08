@@ -529,7 +529,7 @@ a {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(-28px);
   transition: opacity 900ms ease, transform 900ms ease;
 }
 
@@ -546,7 +546,7 @@ a {
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(-24px);
 }
 
 .page-enter-to,
