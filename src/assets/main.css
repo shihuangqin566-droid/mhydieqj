@@ -529,11 +529,28 @@ a {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transform: translateY(32px);
+  transition: opacity 900ms ease, transform 900ms ease;
 }
 
 .fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.page-enter-to,
+.page-leave-from {
   opacity: 1;
   transform: translateY(0);
 }

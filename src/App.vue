@@ -18,7 +18,9 @@
     </header>
 
     <main>
-      <router-view />
+      <transition name="page" mode="out-in">
+        <router-view />
+      </transition>
     </main>
 
     <footer class="site-footer">

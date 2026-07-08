@@ -2,7 +2,7 @@
   <div class="home-page">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy fade-in">
           <span class="hero-badge">智能投研 · 机构级策略</span>
           <h1>东子证券 · A股智能研究平台</h1>
           <p class="lead">
@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <div class="dashboard-card">
+        <div class="dashboard-card fade-in">
           <Dashboard />
         </div>
       </div>
